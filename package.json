@@ -1,5 +1,5 @@
 { "name": "pivotal-tracker",
-  "description": "Node.js wrapper for PivotalTracker REST API v5",
+  "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
   "version": "0.1.0",
   "homepage": "http://github.com/prattsj/pivotal-tracker",
   "keywords": [

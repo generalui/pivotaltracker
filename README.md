@@ -1,6 +1,6 @@
 # pivotal-tracker
 
-pivotal-tracker is a node.js wrapper for the PivotalTracker API (v5).
+pivotal-tracker is a node.js wrapper for the Pivotal Tracker API (v5).
 
 
 ## Installation
@@ -162,6 +162,6 @@ tracker.getToken(user, password, function(error, token) {
 });
 ```
 
-## Full PivotalTracker API v5 Documentation
+## Full Pivotal Tracker API (v5) Documentation
 
-- [PivotalTracker API v5 Documentation](https://www.pivotaltracker.com/help/api?version=v5 "PivotalTracker API v5")
+- [Pivotal Tracker API v5 Documentation](https://www.pivotaltracker.com/help/api?version=v5 "Pivotal Tracker API v5")
