@@ -38,13 +38,13 @@ client.project(12345).story(67890).get(function(error, projects) {
 
 
 ## Property Naming
-As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service uses an underscore naming convention.
+As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore naming convention.
 
-Of course, it's also the case that very commonly, code in .js files use a camelCase variable and property naming convention.
+Of course, it's also the case that very commonly, JS code follows a camelCase variable and property naming convention.
 
-These two conventions are both useful. To serve them both while still being able to easily keep a consistent look & feel while using this module alongside other JS code, the interface for this module uses camelCasing for variable & property names. It will **automatically** translate names when sending/retrieving data from the service, converting your camelCaseNames to/from underscore_names as needed.
+These two conventions are useful in these cases. To serve them both while still being able to easily keep a consistent look & feel when using this module alongside conventionally-named JS variables & properties, the interface for this module uses camelCasing for variable & property names. It will **automatically** translate names when sending/retrieving data from the service, converting your camelCaseNames to/from underscore_names as needed.
 
-If anyone is particularly annoyed by this, file an issue; making this translation configurable is definitely an option.
+If anyone is particularly annoyed by this, please feel free to file an issue; making this translation configurable is definitely an option.
 
 
 ## "Services" and the Singular/Plural Naming Convention
