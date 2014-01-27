@@ -89,9 +89,9 @@ NOTE: If you're particularly annoyed by this as the across-the-board behavior, p
 
 *"Make it plain, dude."*
 
-Ok. When talking over the internets to Pivotal, data looks like this:
+Ok. When talking over the internets to Pivotal, property names look like this:
 ```
-// POST http://www.pivotaltracker.com/services/v4/projects/
+// PUT http://www.pivotaltracker.com/services/v4/projects/
 
 {
     "name" : "hay guyz, new name",
@@ -100,7 +100,8 @@ Ok. When talking over the internets to Pivotal, data looks like this:
 }
 
 ```
-Assuming a successful update, pivotal-tracker would present this data to you as an object with the following structure:
+
+Assuming a successful update, pivotal-tracker would present this data to you as an object with the names converted as follows:
 ```
 {
    "name": "hay guyz, new name",
@@ -113,9 +114,25 @@ Assuming a successful update, pivotal-tracker would present this data to you as 
 }
 ```
 
+So that you can interact like this:
+```
+proj.name = 'hay guyz, new name';
+proj.enableFollowing = true;
+proj.weekStartDay = 'Friday';
+
+```
+
+Instead of like this:
+```
+proj.name = 'hay guyz, new name';
+proj.enable_following = true;
+proj.week_start_day = 'Friday';
+
+```
+
 
 ## Type Conversion
-It's (usually) nice to deal directly with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
+It's often nice to deal directly with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
 
 First, since JSON is the data transfer format--we start off with a simple layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
 
