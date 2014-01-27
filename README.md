@@ -17,8 +17,7 @@ var client = new tracker.Client('mytoken');
 
 client.projects.all(function(error, projects){
 
-    // Stuff & Things
-    // (projects returned in an array)
+    /* Stuff & things (projects returned in an array) */
     
 });
 
@@ -31,8 +30,7 @@ var pivotal = new tracker.Client('mytoken');
 
 client.project(12345).get(function(error, project){
 
-    // Bells & Whistles
-    // (data returned is a single project object)
+    /* Bells & whistles (data returned is a single project object) */
     
 });
 
@@ -45,9 +43,7 @@ var client = new tracker.Client('mytoken');
 
 client.project(12345).stories.all(function(error, stories){
 
-    // Here we go...
-    // (stories returned in an array)
-    
+    /* Livin' it up (stories returned in an array) */
 });
 
 ```
@@ -59,9 +55,7 @@ var pivotal = new tracker.Client('mytoken');
 
 client.project(12345).stories(67890).get(function(error, story){
 
-    // Do the thang
-    // (data returned is a single story object)
-    
+    /* Do the thang (data returned is a single story object) */
 });
 
 ```
@@ -78,19 +72,17 @@ Want to get multiple instances of a resource (eg. "all stories")? Use the plural
 
 client.projects.all(function(error, projects) {
 
-    /* ... */
-    
+    /* ... */ 
 });
 ```
 
-Want a particular instance of a thing, use the singular form and provide the identifier:
+Want a particular instance of a thing? Use the singular form and provide the identifier:
 ```
 // GET http://www.pivotaltracker.com/services/v5/projects/123
 
 client.project(123).get(function(error, project) {
 
     /* ... */
-    
 });
 ```
 
@@ -107,7 +99,6 @@ Access to CRUD methods for comments is provided via the story sub-service:
 client.project(123).story(456).comments.all(function(error, comments) {
 
     /* This is totally a thing. */
-    
 });
 
 ```
@@ -116,7 +107,7 @@ client.project(123).story(456).comments.all(function(error, comments) {
 ```
 client.project(123).comments.all(function(error, comments) {
 
-    /* This is NOT a thing. Exception city right here. */
+    /* This is not a thing. Exception city over here. */
     
 });
 
@@ -124,12 +115,10 @@ client.project(123).comments.all(function(error, comments) {
 ...which is a reflection of the structure of the REST web API:
 
 ```
-// Also not a thing.
-
+/* Also not a thing... */
 GET http://www.pivotaltracker.com/services/v5/projects/123/comments
 
-// But this is!
-
+/* ...but this is.     */
 GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 
 ```
@@ -138,11 +127,9 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 ## Property Naming: Capitalization
 As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
-Of course, it's also the case that very commonly, JS code follows the camelCase naming convention for variables and properties.
+Of course, it's also the case that very commonly, JS code follows the camelCaseNamingConvention for variables and properties.
 
-These two conventions seem equally useful for these respective common cases. Instead of forcing one or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCasing. It will **automatically** translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
-
-NOTE: If you're particularly annoyed by this as the across-the-board behavior, please feel free to file an issue; making this translation configurable is definitely an option.
+These two conventions seem equally useful for these respective common cases. Instead of forcing one or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCasing. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
 In other words...you should interact under the camelCase convention like this:
 ```
@@ -151,7 +138,8 @@ proj.enableFollowing = true;
 proj.weekStartDay = 'Friday';
 
 client.project(123).update(proj, function(error, updatedProject) {
-    // stuff
+
+    /* moar things */
 });
 
 ```
@@ -169,6 +157,8 @@ Which would be auto-converted as follows in the request made to the API:
 ```
 ...and vice-versa.
 
+If you find this across-the-board behavior particularly annoying, file an issue; making this translation configurable would not be a problem.
+
 
 
 ## Type Conversion
@@ -176,7 +166,7 @@ It's often nice to deal directly with JS primitives when data is retrieved from 
 
 First, since JSON is the data transfer format--we start off with a simple layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
 
-In addition to this, type coersion is applied according to whatever JS type is equivalent to the data type the Pivotal API specifies for a given resource's property. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
+In addition to this, type coersion is applied according to whatever JS type is equivalent to the data type specified for a for a given resource's property in the Pivotal API docs. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
 
 This is done for one simple reason: ease of use. By limiting the possible range of data types allowed for the value of any given property, validation & general consumption of data is simplified.
 
@@ -197,6 +187,8 @@ Here are the basics of how type coersion is applied:
         * Setter coerces values to js Number, using toFloat(). If NaN, stored as null.
     * "date" / "datetime"
         * Setter coerces values to js Date, using validator's toDate(). If invalid data, stored as null.
+    * "list"
+        * If value is an array, stored as-is. Else, stored as null.
     * object / associated resource
         * If a non-null value has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
 
@@ -322,7 +314,7 @@ var password = 'fireball';
 
 tracker.getToken(user, password, function(error, token){
 
-    // Super Cool Logic
+    // Super cool logic
     
 });
 ```

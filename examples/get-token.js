@@ -4,8 +4,8 @@
     node get-token username password
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || '{fake_token}',
-    password = process.argv[3] || '{fake_password}';
+    username = process.argv[2] || 'fake_user',
+    password = process.argv[3] || 'fake_password',
 
 tracker.getToken(username, password, function(err, token) {
 
