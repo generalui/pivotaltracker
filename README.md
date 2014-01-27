@@ -40,21 +40,21 @@ client.project(12345).story(67890).get(function(error, projects){
 ## Property Naming: "Sub-Services" and the Singular/Plural Convention
 Think of access to the various resources in terms of the inherent hierarchy of RESTful services.
 
-These heirarchical relationships between the various resources of the system is reflected in the pivotal-tracker module's interface.
+These heirarchical relationships are reflected in the pivotal-tracker module's interface.
 
 Examples:
 
 Access to CRUD methods for comments is provided via the story sub-service:
 
 ```
-client.project(123).story(567).comments.all(function(error, comments) {
+client.project(123).story(456).comments.all(function(error, comments) {
 
     // This is totally a thing.
     
 });
 
 ```
-...but you can't get to comments directly by way of a project...
+...but you can't get to comments directly by way of a project, since the two resources have only an indirect relationship via stories...
 
 ```
 client.project(123).comments.all(function(error, comments) {
@@ -67,9 +67,13 @@ client.project(123).comments.all(function(error, comments) {
 ...which is a reflection of the structure of the REST web API:
 
 ```
-// also not a thing.
+// Also not a thing.
 
 GET http://www.pivotaltracker.com/services/v5/projects/123/comments
+
+// But this is!
+
+GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 
 ```
 
@@ -77,21 +81,21 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/comments
 ## Property Naming: Capitalization
 As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
-Of course, it's also the case that very commonly, JS code follows a camelCase variable and property naming convention.
+Of course, it's also the case that very commonly, JS code follows the camelCase variable and property naming convention.
 
-These two conventions seem equally useful for their respective common cases. To satisfy both while still being able to easily keep a consistent look & feel when using this module alongside conventionally-named JS variables & properties, the interface for this module uses camelCasing for variable & property names. It will **automatically** translate names when sending/retrieving data from the service, converting your camelCaseNames to/from underscore_names as needed.
+These two conventions seem equally useful for these respective common cases. To satisfy both while still being able to easily keep a consistent look & feel when using this module alongside conventionally-named JS variables & properties, the interface for this module uses camelCasing. It will **automatically** translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
-If anyone is particularly annoyed by this as the default behavior, please feel free to file an issue; making this translation configurable is definitely an option.
+NOTE: If you're particularly annoyed by this as the across-the-board behavior, please feel free to file an issue; making this translation configurable is definitely an option.
 
 
 ## Type Conversion
-It's (usually) nice to deal with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
+It's (usually) nice to deal directly with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
 
-First, since JSON is the data transfer format--we start off with a simple layer of JSON.parse() and JSON.stringify() on incoming & outgoing traffic, respectively.
+First, since JSON is the data transfer format--we start off with a simple layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
 
-In addition to this, type coersion--to the best of pivotal-traccker's present ability--is applied according to the JS type that is equivalent to whatever data type the Pivotal API specifies a given resource's property to be. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects!*
+In addition to this, type coersion is applied according to whatever JS type is equivalent to the data type the Pivotal API specifies for a given resource's property. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
 
-The decision to do this was made for one simple reason: ease of use. By limiting the possible range of data types allowed for the value of any given property, validation & general consumption of data is considerably simplified.
+This is done for one simple reason: ease of use. By limiting the possible range of data types allowed for the value of any given property, validation & general consumption of data is simplified.
 
 Here are the basics of how type coersion is applied:
 
