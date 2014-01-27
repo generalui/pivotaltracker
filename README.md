@@ -18,7 +18,6 @@ var client = new tracker.Client('mytoken');
 client.projects.all(function(error, projects){
 
     /* Stuff & things (projects returned in an array) */
-    
 });
 
 ```
@@ -30,8 +29,7 @@ var pivotal = new tracker.Client('mytoken');
 
 client.project(12345).get(function(error, project){
 
-    /* Bells & whistles (data returned is a single project object) */
-    
+    /* Bells & whistles (data returned is a single project object) */ 
 });
 
 ```
@@ -87,8 +85,7 @@ var password = 'fireball';
 
 tracker.getToken(user, password, function(error, token){
 
-    // Super cool logic
-    
+    /* Super cool logic */
 });
 ```
 
@@ -96,24 +93,21 @@ tracker.getToken(user, password, function(error, token){
 ## Naming Conventions
 
 #### Singular vs. Plural "Service" Names (Methods vs. (Non-Function) Properties)
-Pretty straightforward:
 
 Want to get multiple instances of a resource (eg. "all stories")? Use the plural form of the resource name:
 ```
 // GET http://www.pivotaltracker.com/services/v5/projects
 
 client.projects.all(function(error, projects) {
-
     /* ... */ 
 });
 ```
 
-Want a particular instance of a thing? Use the singular form and provide an identifier:
+Want to get a particular instance? Use the singular form of the resource name and pass in the identifier:
 ```
 // GET http://www.pivotaltracker.com/services/v5/projects/123
 
 client.project(123).get(function(error, project) {
-
     /* ... */
 });
 ```
@@ -140,7 +134,6 @@ client.project(123).story(456).comments.all(function(error, comments) {
 client.project(123).comments.all(function(error, comments) {
 
     /* This is not a thing. Exception city over here. */
-    
 });
 
 ```
@@ -229,7 +222,7 @@ Here are the basics of how type coersion is applied:
 
 #### tracker main
 * tracker.getToken
-* tracker.useToken
+* tracker.Client
 
 #### tracker Client
 * client.useToken
