@@ -61,6 +61,38 @@ client.project(12345).stories(67890).get(function(error, story){
 ```
 
 
+## Authentication
+https://www.pivotaltracker.com/help/api#Request_Authentication_and_CORS
+
+Authenticating is easy. Pass in a string with the user's API token when creating a client:
+```
+var tracker = require('pivotal-tracker');
+var client = tracker.Client('apiToken');
+```
+Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) created from this client instance:
+```
+var tracker = require('pivotal-tracker');
+var client = tracker.Client();
+
+// stuff happens...
+
+client.useToken('apiToken');
+```
+
+You can also retrieve the token with a username and password:
+```javascript
+var tracker = require('pivotal-tracker');
+var user = 'mario';
+var password = 'fireball';
+
+tracker.getToken(user, password, function(error, token){
+
+    // Super cool logic
+    
+});
+```
+
+
 ## Naming Conventions
 
 #### Singular vs. Plural "Service" Names (Methods vs. (Non-Function) Properties)
@@ -288,36 +320,6 @@ Here are the basics of how type coersion is applied:
 $ npm test
 ```
 
-## Authentication
-https://www.pivotaltracker.com/help/api#Request_Authentication_and_CORS
-
-Authenticating is easy. Pass in a string with the user's API token when creating a client:
-```
-var tracker = require('pivotal-tracker');
-var client = tracker.Client('apiToken');
-```
-Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) created from this client instance:
-```
-var tracker = require('pivotal-tracker');
-var client = tracker.Client();
-
-// stuff happens...
-
-client.useToken('apiToken');
-```
-
-You can also retrieve the token with a username and password:
-```javascript
-var tracker = require('pivotal-tracker');
-var user = 'mario';
-var password = 'fireball';
-
-tracker.getToken(user, password, function(error, token){
-
-    // Super cool logic
-    
-});
-```
 
 ## Full Pivotal Tracker API (v5) Documentation
 
