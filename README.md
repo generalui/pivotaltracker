@@ -15,7 +15,7 @@ Retrieve *all* projects for the user:
 var tracker = require('pivotal-tracker');
 var client = new tracker.Client('mytoken');
 
-client.projects.all(function(error, projects) {
+client.projects.all(function(error, projects){
 
     // Stuff & Things
     
@@ -28,7 +28,7 @@ Retrieve a *specific* story in a project:
 var tracker = require('pivotal-tracker');
 var pivotal = new tracker.Client('mytoken');
 
-client.project(12345).story(67890).get(function(error, projects) {
+client.project(12345).story(67890).get(function(error, projects){
 
     // Bells & Whistles
     
@@ -37,18 +37,81 @@ client.project(12345).story(67890).get(function(error, projects) {
 ```
 
 
-## Property Naming
-As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore naming convention.
+## Property Naming: "Sub-Services" and the Singular/Plural Convention
+Think of access to the various resources in terms of the inherent hierarchy of RESTful services.
+
+These heirarchical relationships between the various resources of the system is reflected in the pivotal-tracker module's interface.
+
+Examples:
+
+Access to CRUD methods for comments is provided via the story sub-service:
+
+```
+client.project(123).story(567).comments.all(function(error, comments) {
+
+    // This is totally a thing.
+    
+});
+
+```
+...but you can't get to comments directly by way of a project...
+
+```
+client.project(123).comments.all(function(error, comments) {
+
+    // This is NOT a thing. Exception city right here.
+    
+});
+
+```
+...which is a reflection of the structure of the REST web API:
+
+```
+// also not a thing.
+
+GET http://www.pivotaltracker.com/services/v5/projects/123/comments
+
+```
+
+
+## Property Naming: Capitalization
+As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
 Of course, it's also the case that very commonly, JS code follows a camelCase variable and property naming convention.
 
-These two conventions are useful in these cases. To serve them both while still being able to easily keep a consistent look & feel when using this module alongside conventionally-named JS variables & properties, the interface for this module uses camelCasing for variable & property names. It will **automatically** translate names when sending/retrieving data from the service, converting your camelCaseNames to/from underscore_names as needed.
+These two conventions seem equally useful for their respective common cases. To satisfy both while still being able to easily keep a consistent look & feel when using this module alongside conventionally-named JS variables & properties, the interface for this module uses camelCasing for variable & property names. It will **automatically** translate names when sending/retrieving data from the service, converting your camelCaseNames to/from underscore_names as needed.
 
-If anyone is particularly annoyed by this, please feel free to file an issue; making this translation configurable is definitely an option.
+If anyone is particularly annoyed by this as the default behavior, please feel free to file an issue; making this translation configurable is definitely an option.
 
 
-## "Services" and the Singular/Plural Naming Convention
-TODO: write this
+## Type Conversion
+It's (usually) nice to deal with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
+
+First, since JSON is the data transfer format--we start off with a simple layer of JSON.parse() and JSON.stringify() on incoming & outgoing traffic, respectively.
+
+In addition to this, type coersion--to the best of pivotal-traccker's present ability--is applied according to the JS type that is equivalent to whatever data type the Pivotal API specifies a given resource's property to be. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects!*
+
+The decision to do this was made for one simple reason: ease of use. By limiting the possible range of data types allowed for the value of any given property, validation & general consumption of data is considerably simplified.
+
+Here are the basics of how type coersion is applied:
+
+1. Regardless of Pivotal-specified data type, the following values, when passed into object property setters, are always defaulted to null:
+    * null
+    * undefined
+    * empty string
+    * functions
+
+2. Otherwise...
+    * Pivotal data type is: string
+        * Setter coerces values to js String, using toString()
+    * Pivotal data type is: int
+        * Setter coerces values to js Number, using toInt() w/ radix 10. If NaN, stored as null.
+    * Pivotal data type is: float
+        * Setter coerces values to js Number, using toFloat(). If NaN, stored as null.
+    * Pivotal data type is: date / datetime
+        * Setter coerces values to js Date, using validator's toDate(). If invalid data, stored as null.
+    * Pivotal data type is: object
+        * If a non-null object has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
 
 
 ## API
@@ -56,9 +119,9 @@ TODO: write this
 #### tracker main
 * tracker.getToken
 * tracker.useToken
-* tracker.Client
 
 #### tracker Client
+* client.useToken
 * client.account
 * client.accounts
 * client.project
@@ -141,12 +204,27 @@ TODO: write this
 * comment.delete
 
 
+## Running Tests
+```
+$ npm test
+```
 
 ## Authentication
 https://www.pivotaltracker.com/help/api#Request_Authentication_and_CORS
 
-TODO: this
+Authenticating is easy. Pass in a string with the user's API token when creating a client:
 ```
+var tracker = require('pivotal-tracker');
+var client = tracker.Client('apiToken');
+```
+Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) created from this client instance:
+```
+var tracker = require('pivotal-tracker');
+var client = tracker.Client();
+
+// stuff happens...
+
+client.useToken('apiToken');
 ```
 
 You can also retrieve the token with a username and password:
@@ -155,7 +233,7 @@ var tracker = require('pivotal-tracker');
 var user = 'mario';
 var password = 'fireball';
 
-tracker.getToken(user, password, function(error, token) {
+tracker.getToken(user, password, function(error, token){
 
     // Super Cool Logic
     
@@ -164,4 +242,15 @@ tracker.getToken(user, password, function(error, token) {
 
 ## Full Pivotal Tracker API (v5) Documentation
 
-- [Pivotal Tracker API v5 Documentation](https://www.pivotaltracker.com/help/api?version=v5 "Pivotal Tracker API v5")
+[Pivotal Tracker API v5 Documentation](https://www.pivotaltracker.com/help/api?version=v5 "Pivotal Tracker API v5")
+
+
+## License (MIT)
+
+Copyright (c) 2014 Sabra Pratt sabra.pratt@gmail.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
