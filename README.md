@@ -10,7 +10,7 @@ pivotal-tracker is a node.js wrapper for the Pivotal Tracker API (v5).
 
 ## Quick Start
 
-Get *all* projects for the user:
+Get all projects for the user:
 ```javascript
 var tracker = require('pivotal-tracker');
 var client = new tracker.Client('mytoken');
@@ -18,19 +18,49 @@ var client = new tracker.Client('mytoken');
 client.projects.all(function(error, projects){
 
     // Stuff & Things
+    // (projects returned in an array)
     
 });
 
 ```
 
-Get a *specific* story in a project:
+Get a *specific* project:
 ```javascript
 var tracker = require('pivotal-tracker');
 var pivotal = new tracker.Client('mytoken');
 
-client.project(12345).story(67890).get(function(error, projects){
+client.project(12345).get(function(error, project){
 
     // Bells & Whistles
+    // (data returned is a single project object)
+    
+});
+
+```
+
+Get all stories in a project:
+```javascript
+var tracker = require('pivotal-tracker');
+var client = new tracker.Client('mytoken');
+
+client.project(12345).stories.all(function(error, stories){
+
+    // Here we go...
+    // (stories returned in an array)
+    
+});
+
+```
+
+Get a *specific* story in a *specific* project:
+```javascript
+var tracker = require('pivotal-tracker');
+var pivotal = new tracker.Client('mytoken');
+
+client.project(12345).stories(67890).get(function(error, story){
+
+    // Do the thang
+    // (data returned is a single story object)
     
 });
 
@@ -38,18 +68,45 @@ client.project(12345).story(67890).get(function(error, projects){
 
 
 ## Property Naming: "Sub-Services" and the Singular/Plural Convention
+
+#### Singular vs. Plural Service Names (Methods vs. (Non-Function) Properties)
+It's pretty straightforward:
+
+Want to get multiple instances of a resource (eg. "all stories")? Use the plural form of the resource name:
+```
+// GET http://www.pivotaltracker.com/services/v5/projects
+
+client.projects.all(function(error, projects) {
+
+    /* ... */
+    
+});
+```
+
+Want a particular instance of a thing, use the singular form and provide the identifier:
+```
+// GET http://www.pivotaltracker.com/services/v5/projects/123
+
+client.project(123).get(function(error, project) {
+
+    /* ... */
+    
+});
+```
+
+#### Service Chaining & the Resource Hierarchy
 Think of access to the various resources in terms of the inherent hierarchy of RESTful services.
 
-These heirarchical relationships are reflected in the pivotal-tracker module's interface.
+These hierarchical relationships are reflected in the pivotal-tracker module interface.
 
-Examples:
+Example:
 
 Access to CRUD methods for comments is provided via the story sub-service:
 
 ```
 client.project(123).story(456).comments.all(function(error, comments) {
 
-    // This is totally a thing.
+    /* This is totally a thing. */
     
 });
 
@@ -59,7 +116,7 @@ client.project(123).story(456).comments.all(function(error, comments) {
 ```
 client.project(123).comments.all(function(error, comments) {
 
-    // This is NOT a thing. Exception city right here.
+    /* This is NOT a thing. Exception city right here. */
     
 });
 
@@ -81,13 +138,13 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 ## Property Naming: Capitalization
 As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
-Of course, it's also the case that very commonly, JS code follows the camelCase variable and property naming convention.
+Of course, it's also the case that very commonly, JS code follows the camelCase naming convention for variables and properties.
 
-These two conventions seem equally useful for these respective common cases. To satisfy both while still being able to easily keep a consistent look & feel when using this module alongside conventionally-named JS variables & properties, the interface for this module uses camelCasing. It will **automatically** translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
+These two conventions seem equally useful for these respective common cases. Instead of forcing one or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCasing. It will **automatically** translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
 NOTE: If you're particularly annoyed by this as the across-the-board behavior, please feel free to file an issue; making this translation configurable is definitely an option.
 
-In other words...you can interact under the camelCase convention like this:
+In other words...you should interact under the camelCase convention like this:
 ```
 proj.name = 'hay guyz, new name';
 proj.enableFollowing = true;
