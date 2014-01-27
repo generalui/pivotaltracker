@@ -5,7 +5,7 @@
   "keywords": [
     "pivotal", "tracker", "pivotaltracker"
   ],
-  "author": "Sabra Pratt <hey@sabrapratt.com>",
+  "author": "Sabra Pratt <pratt.sabra@gmail.com>",
   "main": "index.js",
   "bugs": {
     "url": "http://github.com/prattsj/pivotal-tracker/issues"
