@@ -61,10 +61,10 @@ client.project(12345).stories(67890).get(function(error, story){
 ```
 
 
-## Property Naming: "Sub-Services" and the Singular/Plural Convention
+## Naming Conventions
 
-#### Singular vs. Plural Service Names (Methods vs. (Non-Function) Properties)
-It's pretty straightforward:
+#### Singular vs. Plural "Service" Names (Methods vs. (Non-Function) Properties)
+Pretty straightforward:
 
 Want to get multiple instances of a resource (eg. "all stories")? Use the plural form of the resource name:
 ```
@@ -76,7 +76,7 @@ client.projects.all(function(error, projects) {
 });
 ```
 
-Want a particular instance of a thing? Use the singular form and provide the identifier:
+Want a particular instance of a thing? Use the singular form and provide an identifier:
 ```
 // GET http://www.pivotaltracker.com/services/v5/projects/123
 
@@ -124,7 +124,7 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 ```
 
 
-## Property Naming: Capitalization
+#### Variable & Property Name Capitalization
 As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
 Of course, it's also the case that very commonly, JS code follows the camelCaseNamingConvention for variables and properties.
