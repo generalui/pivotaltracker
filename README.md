@@ -87,6 +87,32 @@ These two conventions seem equally useful for these respective common cases. To 
 
 NOTE: If you're particularly annoyed by this as the across-the-board behavior, please feel free to file an issue; making this translation configurable is definitely an option.
 
+*"Make it plain, dude."*
+
+Ok. When talking over the internets to Pivotal, data looks like this:
+```
+// POST http://www.pivotaltracker.com/services/v4/projects/
+
+{
+    "name" : "hay guyz, new name",
+    "enable_following": true,
+    "week_start_day": "Friday"
+}
+
+```
+Assuming a successful update, pivotal-tracker would present this data to you as an object with the following structure:
+```
+{
+   "name": "hay guyz, new name",
+   "enableFollowing": true,
+   "weekStartDay": "Friday",
+   .
+   .
+   .
+   "iterationLength": 1
+}
+```
+
 
 ## Type Conversion
 It's (usually) nice to deal directly with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
