@@ -10,7 +10,7 @@ pivotal-tracker is a node.js wrapper for the Pivotal Tracker API (v5).
 
 ## Quick Start
 
-Retrieve *all* projects for the user:
+Get *all* projects for the user:
 ```javascript
 var tracker = require('pivotal-tracker');
 var client = new tracker.Client('mytoken');
@@ -23,7 +23,7 @@ client.projects.all(function(error, projects){
 
 ```
 
-Retrieve a *specific* story in a project:
+Get a *specific* story in a project:
 ```javascript
 var tracker = require('pivotal-tracker');
 var pivotal = new tracker.Client('mytoken');
@@ -101,17 +101,17 @@ Here are the basics of how type coersion is applied:
     * empty string
     * functions
 
-2. Otherwise...
-    * Pivotal data type is: string
+2. Otherwise, when the Pivotal data type is
+    * "string"
         * Setter coerces values to js String, using toString()
-    * Pivotal data type is: int
+    * "int"
         * Setter coerces values to js Number, using toInt() w/ radix 10. If NaN, stored as null.
-    * Pivotal data type is: float
+    * "float"
         * Setter coerces values to js Number, using toFloat(). If NaN, stored as null.
-    * Pivotal data type is: date / datetime
+    * "date" / "datetime"
         * Setter coerces values to js Date, using validator's toDate(). If invalid data, stored as null.
-    * Pivotal data type is: object
-        * If a non-null object has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
+    * object / associated resource
+        * If a non-null value has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
 
 
 ## API
