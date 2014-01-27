@@ -87,11 +87,21 @@ These two conventions seem equally useful for these respective common cases. To 
 
 NOTE: If you're particularly annoyed by this as the across-the-board behavior, please feel free to file an issue; making this translation configurable is definitely an option.
 
-*"Make it plain, dude."*
-
-Ok. When talking over the internets to Pivotal, property names look like this:
+In other words...you can interact with naming like this:
 ```
-// PUT http://www.pivotaltracker.com/services/v4/projects/
+proj.name = 'hay guyz, new name';
+proj.enableFollowing = true;
+proj.weekStartDay = 'Friday';
+
+client.project(123).update(proj, function(error, updatedProject) {
+    // stuff
+});
+
+```
+
+Which would be auto-converted as follows in the request made to the API:
+```
+// PUT http://www.pivotaltracker.com/services/v4/projects/123
 
 {
     "name" : "hay guyz, new name",
@@ -100,35 +110,8 @@ Ok. When talking over the internets to Pivotal, property names look like this:
 }
 
 ```
+...and vice-versa.
 
-Assuming a successful update, pivotal-tracker would present this data to you as an object with the names converted as follows:
-```
-{
-   "name": "hay guyz, new name",
-   "enableFollowing": true,
-   "weekStartDay": "Friday",
-   .
-   .
-   .
-   "iterationLength": 1
-}
-```
-
-So that you can interact like this:
-```
-proj.name = 'hay guyz, new name';
-proj.enableFollowing = true;
-proj.weekStartDay = 'Friday';
-
-```
-
-Instead of like this:
-```
-proj.name = 'hay guyz, new name';
-proj.enable_following = true;
-proj.week_start_day = 'Friday';
-
-```
 
 
 ## Type Conversion
