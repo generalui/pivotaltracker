@@ -87,7 +87,7 @@ These two conventions seem equally useful for these respective common cases. To 
 
 NOTE: If you're particularly annoyed by this as the across-the-board behavior, please feel free to file an issue; making this translation configurable is definitely an option.
 
-In other words...you can interact with naming like this:
+In other words...you can interact under the camelCase convention like this:
 ```
 proj.name = 'hay guyz, new name';
 proj.enableFollowing = true;
