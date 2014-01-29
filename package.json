@@ -15,7 +15,7 @@
     "url": "http://github.com/prattsj/pivotal-tracker.git"
   },
   "scripts": {
-    "test": "nodeunit ./tests/run.js"
+    "test": "nodeunit ./tests/unit/run.js"
   },
   "dependencies": {
       "validator": "3.2.x",

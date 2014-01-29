@@ -8,7 +8,7 @@ pivotal-tracker is a node.js wrapper for the Pivotal Tracker API (v5).
     npm install pivotal-tracker
 
 
-## Quick Start
+## tl;dr
 
 Get all projects for the user:
 ```javascript
@@ -35,7 +35,7 @@ Get all stories in a project:
 ```javascript
 client.project(12345).stories.all(function(error, stories){
 
-    /* Livin' it up (stories returned in an array) */
+    /* Livin' it up.. (stories returned in an array) */
 });
 
 ```
@@ -44,7 +44,7 @@ Get a *specific* story in a *specific* project:
 ```javascript
 client.project(12345).story(67890).get(function(error, story){
 
-    /* Doin' the thang (data returned as a single story object) */
+    /* Doin' the thang.. (data returned as a single story object) */
 });
 
 ```
@@ -203,7 +203,7 @@ Here are the basics of how type coersion is applied:
     * "list"
         * If value is an array, stored as-is. Else, stored as null.
     * object / associated resource
-        * If a non-null, non-array value has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
+        * If a non-null, non-array value has type 'object', it's set as-is. All other values are defaulted to null.
 
 
 ## API
@@ -299,16 +299,34 @@ Here are the basics of how type coersion is applied:
 * comment.delete
 * comment.fileAttachment
 
+#### file attachment Service
+* attachment.delete
+* attachment.upload
+* attachment.download
+
 
 ## Running Tests
 ```
 $ npm test
 ```
 
-
 ## Full Pivotal Tracker API (v5) Documentation
 
-[Pivotal Tracker API v5 Documentation](https://www.pivotaltracker.com/help/api?version=v5 "Pivotal Tracker API v5")
+https://www.pivotaltracker.com/help/api?version=v5
+
+
+## Roadmap
+#### Support planned in future versions for:
+* Iteration Overrides
+* Google Attachments
+* Top-level Story service (not accessed throug a particular project)
+* Top-level Epic service (not accessed throug a particular project)
++ Followers
++ Saved Searches
++ Project Webhooks
++ Project Integrations
++ Exports
++ Source Commits
 
 
 ## License (MIT)
