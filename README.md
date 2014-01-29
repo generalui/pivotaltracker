@@ -59,10 +59,10 @@ var tracker = require('pivotal-tracker');
 var client = new tracker.Client('apiToken');
 ```
 
-Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) created from this client instance:
+Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) accessed via this client instance:
 ```javascript
 var tracker = require('pivotal-tracker');
-var client = tracker.Client();
+var client = tracker.Client('firstToken');
 
 /* stuff happens... */
 
@@ -111,7 +111,7 @@ These hierarchical relationships are reflected in the pivotal-tracker module int
 
 Example:
 
-Access to CRUD methods for comments is provided via the story sub-service:
+Access to CRUD methods for comments is provided via the story sub-service...
 ```javascript
 client.project(123).story(456).comments.all(function(error, comments) {
 
@@ -143,9 +143,9 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 #### Variable & Property Name Capitalization
 As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
-Of course, it's also the case that JS code commonly follows the camelCaseNamingConvention for variables and properties.
+It's also of course the case that JS code commonly follows the camelCaseNamingConvention for variables and properties.
 
-Instead of forcing one convention or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCasing. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
+Instead of forcing one convention or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCase. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
 In other words...you should interact with using the camelCase convention:
 ```javascript
@@ -183,8 +183,6 @@ JSON is the data transfer format, so there's a layer of JSON.parse() and JSON.st
 
 In addition to this, for ease of use, type coersion is applied according to whatever JS type is equivalent to the data type specified for a for a given resource's property in the Pivotal API docs. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
 
-Because of this, the possible range of data types allowed for the value of any given property is considerably limited.
-
 Here are the basics of how type coersion is applied:
 
 1. Regardless of Pivotal-specified data type, the following values, when passed into object property setters, are always defaulted to null:
@@ -213,6 +211,7 @@ Here are the basics of how type coersion is applied:
 #### tracker main
 * tracker.getToken
 * tracker.Client
+* tracker.fileAttachment
 
 #### tracker Client
 * client.getToken
@@ -247,6 +246,7 @@ Here are the basics of how type coersion is applied:
 * project.epics
 * project.story
 * project.stories
+* project.uploads
 
 #### project membership Service
 * projmember.all
@@ -297,6 +297,7 @@ Here are the basics of how type coersion is applied:
 * comment.create
 * comment.update
 * comment.delete
+* comment.fileAttachment
 
 
 ## Running Tests
