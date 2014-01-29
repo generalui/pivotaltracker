@@ -53,7 +53,7 @@ var pivotal = new tracker.Client('mytoken');
 
 client.project(12345).stories(67890).get(function(error, story){
 
-    /* Do the thang (data returned is a single story object) */
+    /* Doin' the thang (data returned is a single story object) */
 });
 
 ```

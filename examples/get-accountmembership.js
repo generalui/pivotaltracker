@@ -1,44 +1,44 @@
 /**
     To run from command line:
 
-    node get-epic username password projectId storyId
+    node get-accountmmebership username password accountId personId
 */
 var tracker  = require("../index.js"),
     username = process.argv[2] || 'fake_user',
     password = process.argv[3] || 'fake_password',
-    projectId = process.argv[4] || 12345
-    epicId = process.argv[5] || 67890;
+    accountId = process.argv[4],
+    personId = process.argv[5];
 
 tracker.getToken(username, password, function(err, token) {
 
-    if (err) {
+    if(err){
+        console.error("Could not retrieve token");
         console.log(err);
     }
     else {
-    
         var client = new tracker.Client({trackerToken:token});
         
-        if (epicId) {
+        if (personId) {
         
-            client.project(projectId).epic(1034694).get(function(error, epic) {
+            client.account(accountId).membership(personId).all(function(error, membership) {
             
                 if (error) {
                     console.log(error);
                 }
                 else {
-                    console.log(epic);
+                    console.log(membership);
                 }
             });
         }
         else {
         
-            client.project(projectId).epics.all(function(error, epics) {
+            client.account(accountId).memberships.all(function(error, memberships) {
             
                 if (error) {
                     console.log(error);
                 }
                 else {
-                    console.log(epics);
+                    console.log(memberships);
                 }
             });
         }
