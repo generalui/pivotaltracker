@@ -75,7 +75,7 @@ var tracker = require('pivotal-tracker');
 var user = 'mario';
 var password = 'fireball';
 
-tracker.getToken(user, password, function(error, token){
+tracker.getToken(user, password, function(error, token) {
 
     /* Super cool logic */
 });
@@ -317,16 +317,16 @@ https://www.pivotaltracker.com/help/api?version=v5
 
 ## Roadmap
 #### Support planned in future versions for:
-* Iteration Overrides
-* Google Attachments
-* Top-level Story service (not accessed throug a particular project)
-* Top-level Epic service (not accessed throug a particular project)
-+ Followers
-+ Saved Searches
-+ Project Webhooks
-+ Project Integrations
-+ Exports
-+ Source Commits
+* [Iteration Overrides](https://www.pivotaltracker.com/help/api/rest/v5#Iterations "Pivotal Tracker API Documentation - Iteration Overrides")
+* [Google Attachments](https://www.pivotaltracker.com/help/api/rest/v5#Attachments "Pivotal Tracker API Documentation - Google Attachments")
+* [Top-level Story service (not accessed through a particular project)](https://www.pivotaltracker.com/help/api/rest/v5#Attachments "Pivotal Tracker API Documentation - Stories")
+* [Top-level Epic service (not accessed through a particular project)](https://www.pivotaltracker.com/help/api/rest/v5#Epics "Pivotal Tracker API Documentation - Epics")
++ [Followers](https://www.pivotaltracker.com/help/api/rest/v5#follower_resource "Pivotal Tracker API Documentation - Followers")
++ [Saved Searches](https://www.pivotaltracker.com/help/api/rest/v5#Saved_Search "Pivotal Tracker API Documentation - Saved Searches")
++ [Project Webhooks](https://www.pivotaltracker.com/help/api/rest/v5#Project_Webhooks "Pivotal Tracker API Documentation - Project Webhooks")
++ [Project Integrations](https://www.pivotaltracker.com/help/api/rest/v5#Project_Integrations "Pivotal Tracker API Documentation - Project Integrations")
++ [Exports](https://www.pivotaltracker.com/help/api/rest/v5#Exports "Pivotal Tracker API Documentation - Exports")
++ [Source Commits](https://www.pivotaltracker.com/help/api/rest/v5#Source_Commits "Pivotal Tracker API Documentation - Source Commits")
 
 
 ## License (MIT)
