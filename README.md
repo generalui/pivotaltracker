@@ -24,21 +24,15 @@ client.projects.all(function(error, projects){
 
 Get a *specific* project:
 ```javascript
-var tracker = require('pivotal-tracker');
-var pivotal = new tracker.Client('mytoken');
-
 client.project(12345).get(function(error, project){
 
-    /* Bells & whistles (data returned is a single project object) */ 
+    /* Bells & whistles (data returned as a single project object) */ 
 });
 
 ```
 
 Get all stories in a project:
 ```javascript
-var tracker = require('pivotal-tracker');
-var client = new tracker.Client('mytoken');
-
 client.project(12345).stories.all(function(error, stories){
 
     /* Livin' it up (stories returned in an array) */
@@ -48,12 +42,9 @@ client.project(12345).stories.all(function(error, stories){
 
 Get a *specific* story in a *specific* project:
 ```javascript
-var tracker = require('pivotal-tracker');
-var pivotal = new tracker.Client('mytoken');
+client.project(12345).story(67890).get(function(error, story){
 
-client.project(12345).stories(67890).get(function(error, story){
-
-    /* Doin' the thang (data returned is a single story object) */
+    /* Doin' the thang (data returned as a single story object) */
 });
 
 ```
@@ -63,16 +54,17 @@ client.project(12345).stories(67890).get(function(error, story){
 https://www.pivotaltracker.com/help/api#Request_Authentication_and_CORS
 
 Authenticating is easy. Pass in a string with the user's API token when creating a client:
-```
+```javascript
 var tracker = require('pivotal-tracker');
-var client = tracker.Client('apiToken');
+var client = new tracker.Client('apiToken');
 ```
+
 Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) created from this client instance:
-```
+```javascript
 var tracker = require('pivotal-tracker');
 var client = tracker.Client();
 
-// stuff happens...
+/* stuff happens... */
 
 client.useToken('apiToken');
 ```
@@ -95,7 +87,7 @@ tracker.getToken(user, password, function(error, token){
 #### Singular vs. Plural "Service" Names (Methods vs. (Non-Function) Properties)
 
 Want to get multiple instances of a resource (eg. "all stories")? Use the plural form of the resource name:
-```
+```javascript
 // GET http://www.pivotaltracker.com/services/v5/projects
 
 client.projects.all(function(error, projects) {
@@ -103,8 +95,8 @@ client.projects.all(function(error, projects) {
 });
 ```
 
-Want to get a particular instance? Use the singular form of the resource name and pass in the identifier:
-```
+Want a particular instance? Use the singular form of the resource name and pass in the identifier:
+```javascript
 // GET http://www.pivotaltracker.com/services/v5/projects/123
 
 client.project(123).get(function(error, project) {
@@ -120,27 +112,26 @@ These hierarchical relationships are reflected in the pivotal-tracker module int
 Example:
 
 Access to CRUD methods for comments is provided via the story sub-service:
-
-```
+```javascript
 client.project(123).story(456).comments.all(function(error, comments) {
 
     /* This is totally a thing. */
 });
 
 ```
-...but you can't get to comments directly by way of a project, since the two resources have only an indirect relationship via stories...
 
-```
+...but you can't get to comments directly by way of a project, since the two resources have only an indirect relationship via stories...
+```javascript
 client.project(123).comments.all(function(error, comments) {
 
     /* This is not a thing. Exception city over here. */
 });
 
 ```
-...which is a reflection of the structure of the REST web API:
 
-```
-/* Also not a thing... */
+...which is a reflection of the structure of the REST web API:
+```javascript
+/* Not a thing... */
 GET http://www.pivotaltracker.com/services/v5/projects/123/comments
 
 /* ...but this is.     */
@@ -152,12 +143,12 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 #### Variable & Property Name Capitalization
 As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
 
-Of course, it's also the case that very commonly, JS code follows the camelCaseNamingConvention for variables and properties.
+Of course, it's also the case that JS code commonly follows the camelCaseNamingConvention for variables and properties.
 
-These two conventions seem equally useful for these respective common cases. Instead of forcing one or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCasing. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
+Instead of forcing one convention or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCasing. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
-In other words...you should interact under the camelCase convention like this:
-```
+In other words...you should interact with using the camelCase convention:
+```javascript
 proj.name = 'hay guyz, new name';
 proj.enableFollowing = true;
 proj.weekStartDay = 'Friday';
@@ -169,8 +160,8 @@ client.project(123).update(proj, function(error, updatedProject) {
 
 ```
 
-Which would be auto-converted as follows in the request made to the API:
-```
+We'll deal with converting that to:
+```javascript
 // PUT http://www.pivotaltracker.com/services/v4/projects/123
 
 {
@@ -180,20 +171,19 @@ Which would be auto-converted as follows in the request made to the API:
 }
 
 ```
-...and vice-versa.
 
-If you find this across-the-board behavior particularly annoying, file an issue; making this translation configurable would not be a problem.
+...and vice-versa.
 
 
 
 ## Type Conversion
-It's often nice to deal directly with JS primitives when data is retrieved from someplace--as opposed to having to parse and manipulate a bunch of strings.
+The Basics:
 
-First, since JSON is the data transfer format--we start off with a simple layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
+JSON is the data transfer format, so there's a layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
 
-In addition to this, type coersion is applied according to whatever JS type is equivalent to the data type specified for a for a given resource's property in the Pivotal API docs. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
+In addition to this, for ease of use, type coersion is applied according to whatever JS type is equivalent to the data type specified for a for a given resource's property in the Pivotal API docs. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
 
-This is done for one simple reason: ease of use. By limiting the possible range of data types allowed for the value of any given property, validation & general consumption of data is simplified.
+Because of this, the possible range of data types allowed for the value of any given property is considerably limited.
 
 Here are the basics of how type coersion is applied:
 
@@ -215,7 +205,7 @@ Here are the basics of how type coersion is applied:
     * "list"
         * If value is an array, stored as-is. Else, stored as null.
     * object / associated resource
-        * If a non-null value has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
+        * If a non-null, non-array value has type 'object', it's passed-through/set as-is. All other values are defaulted to null.
 
 
 ## API
@@ -225,6 +215,7 @@ Here are the basics of how type coersion is applied:
 * tracker.Client
 
 #### tracker Client
+* client.getToken
 * client.useToken
 * client.account
 * client.accounts
