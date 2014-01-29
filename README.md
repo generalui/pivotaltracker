@@ -15,7 +15,7 @@ Get all projects for the user:
 var tracker = require('pivotal-tracker');
 var client = new tracker.Client('mytoken');
 
-client.projects.all(function(error, projects){
+client.projects.all(function(error, projects) {
 
     /* Stuff & things (projects returned in an array) */
 });
@@ -24,7 +24,7 @@ client.projects.all(function(error, projects){
 
 Get a *specific* project:
 ```javascript
-client.project(12345).get(function(error, project){
+client.project(12345).get(function(error, project) {
 
     /* Bells & whistles (data returned as a single project object) */ 
 });
@@ -33,7 +33,7 @@ client.project(12345).get(function(error, project){
 
 Get all stories in a project:
 ```javascript
-client.project(12345).stories.all(function(error, stories){
+client.project(12345).stories.all(function(error, stories) {
 
     /* Livin' it up.. (stories returned in an array) */
 });
@@ -42,7 +42,7 @@ client.project(12345).stories.all(function(error, stories){
 
 Get a *specific* story in a *specific* project:
 ```javascript
-client.project(12345).story(67890).get(function(error, story){
+client.project(12345).story(67890).get(function(error, story) {
 
     /* Doin' the thang.. (data returned as a single story object) */
 });
@@ -62,7 +62,7 @@ var client = new tracker.Client('apiToken');
 Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) accessed via this client instance:
 ```javascript
 var tracker = require('pivotal-tracker');
-var client = tracker.Client('firstToken');
+var client = tracker.Client();
 
 /* stuff happens... */
 
@@ -131,10 +131,10 @@ client.project(123).comments.all(function(error, comments) {
 
 ...which is a reflection of the structure of the REST web API:
 ```javascript
-/* Not a thing... */
+/* Not a thing...  */
 GET http://www.pivotaltracker.com/services/v5/projects/123/comments
 
-/* ...but this is.     */
+/* ...but this is. */
 GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 
 ```
@@ -162,7 +162,7 @@ client.project(123).update(proj, function(error, updatedProject) {
 
 We'll deal with converting that to:
 ```javascript
-// PUT http://www.pivotaltracker.com/services/v4/projects/123
+PUT http://www.pivotaltracker.com/services/v4/projects/123
 
 {
     "name" : "hay guyz, new name",
