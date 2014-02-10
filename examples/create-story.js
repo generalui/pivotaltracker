@@ -18,7 +18,7 @@ tracker.getToken(username, password, function(err, token) {
             description: 'super cool description',
             storyType: 'feature',
             currentState: 'started',
-            estimate: 1,
+            estimate: 2,
             requestedById: 703101,
             //ownedById: 703101,
             comments: [{

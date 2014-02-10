@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ae9cec3-b1af-4b0f-9702-84ff7c393489" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/create-project.js" afterPath="$PROJECT_DIR$/examples/create-project.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/utils.js" afterPath="$PROJECT_DIR$/lib/resources/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/resources/integration.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/resources/iterationoverride.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/resources/person.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/account.js" afterPath="$PROJECT_DIR$/lib/resources/account.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/accountmembership.js" afterPath="$PROJECT_DIR$/lib/resources/accountmembership.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/activity.js" afterPath="$PROJECT_DIR$/lib/resources/activity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/comment.js" afterPath="$PROJECT_DIR$/lib/resources/comment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/create-story.js" afterPath="$PROJECT_DIR$/examples/create-story.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/epic.js" afterPath="$PROJECT_DIR$/lib/resources/epic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/fileattachment.js" afterPath="$PROJECT_DIR$/lib/resources/fileattachment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/iteration.js" afterPath="$PROJECT_DIR$/lib/resources/iteration.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/project.js" afterPath="$PROJECT_DIR$/lib/resources/project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/projectmembership.js" afterPath="$PROJECT_DIR$/lib/resources/projectmembership.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/story.js" afterPath="$PROJECT_DIR$/lib/resources/story.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/task.js" afterPath="$PROJECT_DIR$/lib/resources/task.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pivotal-tracker.iws" />
@@ -30,16 +43,16 @@
       <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/resources/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="373" column="0" selection-start="9340" selection-end="9340" vertical-scroll-proportion="0.0" vertical-offset="5079" max-vertical-offset="5685">
+            <state line="347" column="13" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.0" vertical-offset="4874" max-vertical-offset="5685">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-project.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examples/create-project.js">
+      <file leaf-file-name="create-story.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/examples/create-story.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="11" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.8019802" vertical-offset="159" max-vertical-offset="765">
+            <state line="20" column="23" selection-start="582" selection-end="582" vertical-scroll-proportion="0.3699137" vertical-offset="0" max-vertical-offset="811">
               <folding />
             </state>
           </provider>
@@ -62,33 +75,36 @@
         <option value="$PROJECT_DIR$/lib/tracker.js" />
         <option value="$PROJECT_DIR$/examples/get-projectmembership.js" />
         <option value="$PROJECT_DIR$/examples/create-comment.js" />
-        <option value="$PROJECT_DIR$/examples/create-story.js" />
         <option value="$PROJECT_DIR$/tests/unit/test-resource-epic.js" />
         <option value="$PROJECT_DIR$/examples/create-epic.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/resources/activity.js" />
-        <option value="$PROJECT_DIR$/lib/resources/account.js" />
-        <option value="$PROJECT_DIR$/lib/resources/accountmembership.js" />
-        <option value="$PROJECT_DIR$/lib/resources/comment.js" />
-        <option value="$PROJECT_DIR$/lib/resources/epic.js" />
-        <option value="$PROJECT_DIR$/lib/resources/fileattachment.js" />
-        <option value="$PROJECT_DIR$/lib/resources/iteration.js" />
-        <option value="$PROJECT_DIR$/lib/resources/label.js" />
-        <option value="$PROJECT_DIR$/lib/resources/project.js" />
-        <option value="$PROJECT_DIR$/lib/resources/projectmembership.js" />
-        <option value="$PROJECT_DIR$/lib/resources/story.js" />
-        <option value="$PROJECT_DIR$/lib/resources/task.js" />
         <option value="$PROJECT_DIR$/lib/resources/utils.js" />
         <option value="$PROJECT_DIR$/examples/create-project.js" />
+        <option value="$PROJECT_DIR$/lib/resources/account.js" />
+        <option value="$PROJECT_DIR$/lib/resources/fileattachment.js" />
+        <option value="$PROJECT_DIR$/lib/resources/iteration.js" />
+        <option value="$PROJECT_DIR$/lib/resources/person.js" />
+        <option value="$PROJECT_DIR$/lib/resources/accountmembership.js" />
+        <option value="$PROJECT_DIR$/lib/resources/activity.js" />
+        <option value="$PROJECT_DIR$/lib/resources/epic.js" />
+        <option value="$PROJECT_DIR$/lib/resources/iterationoverride.js" />
+        <option value="$PROJECT_DIR$/lib/resources/story.js" />
+        <option value="$PROJECT_DIR$/lib/resources/label.js" />
+        <option value="$PROJECT_DIR$/lib/resources/project.js" />
+        <option value="$PROJECT_DIR$/lib/resources/comment.js" />
+        <option value="$PROJECT_DIR$/lib/resources/projectmembership.js" />
+        <option value="$PROJECT_DIR$/lib/resources/task.js" />
+        <option value="$PROJECT_DIR$/lib/resources/integration.js" />
+        <option value="$PROJECT_DIR$/examples/create-story.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="677" />
+    <option name="x" value="866" />
     <option name="y" value="22" />
-    <option name="width" value="1557" />
+    <option name="width" value="1669" />
     <option name="height" value="1412" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -133,24 +149,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -214,6 +212,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/resources" />
       <recent name="$PROJECT_DIR$/examples" />
     </key>
   </component>
@@ -266,15 +265,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="677" y="22" width="1557" height="1412" extended-state="0" />
-    <editor active="true" />
+    <frame x="866" y="22" width="1669" height="1412" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.51969695" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36439395" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27408853" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25546116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27009115" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -348,11 +347,6 @@
         <state line="17" column="28" selection-start="447" selection-end="453" vertical-scroll-proportion="0.44117647" vertical-offset="0" max-vertical-offset="578" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/create-story.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="3" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.8442907" vertical-offset="142" max-vertical-offset="720" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit/test-resource-epic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="39" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.6747405" vertical-offset="645" max-vertical-offset="1530" />
@@ -385,100 +379,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/resources/fileattachment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="29" selection-start="581" selection-end="581" vertical-scroll-proportion="0.13492064" vertical-offset="258" max-vertical-offset="5055">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/resources/iteration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="23" selection-start="454" selection-end="454" vertical-scroll-proportion="0.15476191" vertical-offset="183" max-vertical-offset="3585">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/create-project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="12" selection-start="178" selection-end="178" vertical-scroll-proportion="0.1294698" vertical-offset="0" max-vertical-offset="811">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/account.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="2" selection-start="4359" selection-end="4359" vertical-scroll-proportion="0.45469522" vertical-offset="2289" max-vertical-offset="3945">
-          <folding />
+        <state line="27" column="7" selection-start="591" selection-end="594" vertical-scroll-proportion="0.33248407" vertical-offset="144" max-vertical-offset="3990">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/accountmembership.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="2" selection-start="5168" selection-end="5168" vertical-scroll-proportion="0.5645439" vertical-offset="2642" max-vertical-offset="5295">
-          <folding />
+        <state line="76" column="31" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.27515924" vertical-offset="924" max-vertical-offset="5385">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/activity.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="13" selection-start="5369" selection-end="5371" vertical-scroll-proportion="0.1722913" vertical-offset="2993" max-vertical-offset="4455">
-          <folding />
+        <state line="131" column="32" selection-start="3527" selection-end="3649" vertical-scroll-proportion="0.31442663" vertical-offset="1710" max-vertical-offset="4590">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/resources/comment.js">
+    <entry file="file://$PROJECT_DIR$/lib/resources/iterationoverride.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="2" selection-start="5888" selection-end="5888" vertical-scroll-proportion="-2.9802306" vertical-offset="5139" max-vertical-offset="6060">
+        <state line="90" column="67" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.648582" vertical-offset="779" max-vertical-offset="1590">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/epic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="2" selection-start="6168" selection-end="6168" vertical-scroll-proportion="0.40197694" vertical-offset="3311" max-vertical-offset="5865">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/resources/fileattachment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="2" selection-start="6858" selection-end="6858" vertical-scroll-proportion="0.7051071" vertical-offset="3412" max-vertical-offset="5010">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/resources/iteration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="2" selection-start="4290" selection-end="4290" vertical-scroll-proportion="0.7051071" vertical-offset="2122" max-vertical-offset="3540">
+        <state line="27" column="24" selection-start="625" selection-end="625" vertical-scroll-proportion="0.4438964" vertical-offset="0" max-vertical-offset="5970">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/label.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="2" selection-start="3598" selection-end="3598" vertical-scroll-proportion="0.7051071" vertical-offset="1732" max-vertical-offset="4650">
+        <state line="87" column="7" selection-start="2150" selection-end="2153" vertical-scroll-proportion="0.33248407" vertical-offset="999" max-vertical-offset="4650">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/resources/project.js">
+    <entry file="file://$PROJECT_DIR$/lib/resources/person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="544" column="2" selection-start="15485" selection-end="15485" vertical-scroll-proportion="0.32784185" vertical-offset="7916" max-vertical-offset="11610">
-          <folding />
+        <state line="14" column="22" selection-start="294" selection-end="294" vertical-scroll-proportion="0.2589396" vertical-offset="0" max-vertical-offset="1635">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/projectmembership.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="2" selection-start="4651" selection-end="4651" vertical-scroll-proportion="0.22240527" vertical-offset="2505" max-vertical-offset="4965">
+        <state line="35" column="14" selection-start="886" selection-end="886" vertical-scroll-proportion="0.611465" vertical-offset="0" max-vertical-offset="5010">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/story.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="2" selection-start="11334" selection-end="11334" vertical-scroll-proportion="0.5568369" vertical-offset="5917" max-vertical-offset="8835">
+        <state line="302" column="44" selection-start="8375" selection-end="8382" vertical-scroll-proportion="-0.68025476" vertical-offset="5019" max-vertical-offset="9255">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="2" selection-start="4046" selection-end="4046" vertical-scroll-proportion="0.64579904" vertical-offset="2008" max-vertical-offset="4770">
+        <state line="28" column="29" selection-start="602" selection-end="602" vertical-scroll-proportion="0.42802548" vertical-offset="39" max-vertical-offset="4770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/resources/comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="32" selection-start="2871" selection-end="2988" vertical-scroll-proportion="0.31442663" vertical-offset="1395" max-vertical-offset="6150">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/resources/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="795" column="22" selection-start="22292" selection-end="22292" vertical-scroll-proportion="0.83353883" vertical-offset="11204" max-vertical-offset="12015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/resources/integration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="26" selection-start="718" selection-end="718" vertical-scroll-proportion="0.46239212" vertical-offset="0" max-vertical-offset="5715">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/resources/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="373" column="0" selection-start="9340" selection-end="9340" vertical-scroll-proportion="0.0" vertical-offset="5079" max-vertical-offset="5685">
+        <state line="347" column="13" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.0" vertical-offset="4874" max-vertical-offset="5685">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/create-project.js">
+    <entry file="file://$PROJECT_DIR$/examples/create-story.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="11" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.8019802" vertical-offset="159" max-vertical-offset="765">
+        <state line="20" column="23" selection-start="582" selection-end="582" vertical-scroll-proportion="0.3699137" vertical-offset="0" max-vertical-offset="811">
           <folding />
         </state>
       </provider>
