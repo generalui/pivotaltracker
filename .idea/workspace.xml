@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ae9cec3-b1af-4b0f-9702-84ff7c393489" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/resources/integration.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/resources/iterationoverride.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/resources/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/account.js" afterPath="$PROJECT_DIR$/lib/resources/account.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/accountmembership.js" afterPath="$PROJECT_DIR$/lib/resources/accountmembership.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/activity.js" afterPath="$PROJECT_DIR$/lib/resources/activity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/comment.js" afterPath="$PROJECT_DIR$/lib/resources/comment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/create-story.js" afterPath="$PROJECT_DIR$/examples/create-story.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/epic.js" afterPath="$PROJECT_DIR$/lib/resources/epic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/fileattachment.js" afterPath="$PROJECT_DIR$/lib/resources/fileattachment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/iteration.js" afterPath="$PROJECT_DIR$/lib/resources/iteration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/project.js" afterPath="$PROJECT_DIR$/lib/resources/project.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/projectmembership.js" afterPath="$PROJECT_DIR$/lib/resources/projectmembership.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/story.js" afterPath="$PROJECT_DIR$/lib/resources/story.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/task.js" afterPath="$PROJECT_DIR$/lib/resources/task.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/resources/utils.js" afterPath="$PROJECT_DIR$/lib/resources/utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pivotal-tracker.iws" />
@@ -40,19 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="utils.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/resources/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="347" column="13" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.0" vertical-offset="4874" max-vertical-offset="5685">
+            <state line="34" column="62" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.38980892" vertical-offset="204" max-vertical-offset="6105">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-story.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="create-story.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/create-story.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="23" selection-start="582" selection-end="582" vertical-scroll-proportion="0.3699137" vertical-offset="0" max-vertical-offset="811">
+            <state line="23" column="24" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -80,7 +66,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/resources/utils.js" />
         <option value="$PROJECT_DIR$/examples/create-project.js" />
         <option value="$PROJECT_DIR$/lib/resources/account.js" />
         <option value="$PROJECT_DIR$/lib/resources/fileattachment.js" />
@@ -98,6 +83,7 @@
         <option value="$PROJECT_DIR$/lib/resources/task.js" />
         <option value="$PROJECT_DIR$/lib/resources/integration.js" />
         <option value="$PROJECT_DIR$/examples/create-story.js" />
+        <option value="$PROJECT_DIR$/lib/resources/utils.js" />
       </list>
     </option>
   </component>
@@ -149,38 +135,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pivotal-tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,11 +220,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="866" y="22" width="1669" height="1412" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36439395" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36439395" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25546116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -486,7 +440,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="110" column="32" selection-start="2871" selection-end="2988" vertical-scroll-proportion="0.31442663" vertical-offset="1395" max-vertical-offset="6150">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -505,16 +459,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/resources/utils.js">
+    <entry file="file://$PROJECT_DIR$/examples/create-story.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="347" column="13" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.0" vertical-offset="4874" max-vertical-offset="5685">
+        <state line="23" column="24" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/create-story.js">
+    <entry file="file://$PROJECT_DIR$/lib/resources/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="23" selection-start="582" selection-end="582" vertical-scroll-proportion="0.3699137" vertical-offset="0" max-vertical-offset="811">
+        <state line="34" column="62" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.38980892" vertical-offset="204" max-vertical-offset="6105">
           <folding />
         </state>
       </provider>
