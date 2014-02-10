@@ -16,7 +16,7 @@ Standard resource CRUD methods:
 * update(data, cb)
 * delete(id, cb)
 
-Get all projects for the user:
+Example: Get all projects for the user:
 ```javascript
 var tracker = require('pivotal-tracker');
 var client = new tracker.Client('mytoken');
@@ -28,7 +28,7 @@ client.projects.all(function(error, projects) {
 
 ```
 
-Get a *specific* project:
+Example: Get a *specific* project:
 ```javascript
 client.project(12345).get(function(error, project) {
 
@@ -37,7 +37,7 @@ client.project(12345).get(function(error, project) {
 
 ```
 
-Get all stories in a project:
+Example: Get all stories in a project:
 ```javascript
 client.project(12345).stories.all(function(error, stories) {
 
@@ -46,7 +46,7 @@ client.project(12345).stories.all(function(error, stories) {
 
 ```
 
-Get a *specific* story in a *specific* project:
+Example: Get a *specific* story in a *specific* project:
 ```javascript
 client.project(12345).story(67890).get(function(error, story) {
 
