@@ -65,6 +65,10 @@ var testData = [
 		propertyName: 'name',
 		happyTestValue: 'Itz mah text!'
 	},
+    {
+        propertyName: 'description',
+        happyTestValue: 'Itz mah desc!'
+    },
 	{
 		propertyName: 'url',
 		happyTestValue: 'http://www.hey.com/yass'

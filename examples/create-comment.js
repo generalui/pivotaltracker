@@ -1,14 +1,9 @@
-/**
-    To run from command line:
 
-    node get-story username password projectId storyId
-*/
 var tracker  = require("../index.js"),
     username = process.argv[2],
     password = process.argv[3],
     projectId = process.argv[4],
-    storyId = process.argv[5],
-    util = require('util');
+    storyId = process.argv[5];
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -18,13 +13,18 @@ tracker.getToken(username, password, function(err, token) {
     }
     else {
         var client = new tracker.Client({trackerToken:token});
+
+        var comment = {
+            personId: 703101,
+            text: 'testing, 1-2-3...'
+        };
         
-        client.project(projectId).story(storyId).get(function(error, story) {
+        client.project(projectId).story(storyId).comments.create(comment, function(error, comment) {
             if (error) {
                 console.log(error);
             }
             else {
-                console.log(story);
+                console.log(comment);
             }
         });
     }

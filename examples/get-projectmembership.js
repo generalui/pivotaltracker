@@ -1,12 +1,13 @@
 /**
-    To run from command line:
+ To run from command line:
 
-    node get-account username password projectId
-*/
+ node get-projectmembership username password project [personId]
+ */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
-    accountId = process.argv[4] || 12345;
+    username = process.argv[2],
+    password = process.argv[3],
+    projectId = process.argv[4],
+    membershipId = process.argv[5];
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -16,14 +17,30 @@ tracker.getToken(username, password, function(err, token) {
     }
     else {
         var client = new tracker.Client({trackerToken:token});
-        
-        client.account(accountId).get(function(error, account) {
-            if (error) {
-                console.log(error);
-            }
-            else {
-                console.log(account);
-            }
-        });
+
+        if (membershipId) {
+
+            client.project(projectId).membership(membershipId).get(function(error, membership) {
+
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    console.log(membership);
+                }
+            });
+        }
+        else {
+
+            client.project(projectId).memberships.all(function(error, memberships) {
+
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    console.log(memberships);
+                }
+            });
+        }
     }
 });

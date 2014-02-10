@@ -1,14 +1,8 @@
-/**
-    To run from command line:
 
-    node get-story username password projectId storyId
-*/
 var tracker  = require("../index.js"),
     username = process.argv[2],
     password = process.argv[3],
-    projectId = process.argv[4],
-    storyId = process.argv[5],
-    util = require('util');
+    projectId = process.argv[4];
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -18,13 +12,22 @@ tracker.getToken(username, password, function(err, token) {
     }
     else {
         var client = new tracker.Client({trackerToken:token});
-        
-        client.project(projectId).story(storyId).get(function(error, story) {
+
+        var data = {
+            name: 'hay guyz, this is an epic test',
+            description: 'super cool epic description',
+            comments: [{
+                personId: 703101,
+                text: 'whoa, auto new epic comment!'
+            }]
+        };
+
+        client.project(projectId).epics.create(data, function(error, epic) {
             if (error) {
                 console.log(error);
             }
             else {
-                console.log(story);
+                console.log(epic);
             }
         });
     }

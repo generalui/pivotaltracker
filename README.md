@@ -310,7 +310,7 @@ Here are the basics of how type coersion is applied:
 $ npm test
 ```
 
-## Full Pivotal Tracker API (v5) Documentation
+## Complete Pivotal Tracker API (v5) Documentation
 
 https://www.pivotaltracker.com/help/api?version=v5
 
