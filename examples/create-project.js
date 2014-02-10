@@ -13,7 +13,7 @@ tracker.getToken(username, password, function(err, token) {
         var client = new tracker.Client({trackerToken:token});
 
         var data = {
-            name: 'testy-test 2',
+            name: 'testy-test 17',
             atomEnabled: true,
             enablePlannedMode: true,
             weekStartDay: 'Wednesday',
