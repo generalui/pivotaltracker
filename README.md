@@ -9,14 +9,18 @@ pivotal-tracker is a node.js wrapper for the Pivotal Tracker API (v5).
 
 
 ## tl;dr
-Standard resource CRUD methods:
+
+##### Standard resource CRUD methods:
+
 * all(cb)
 * get(id, cb)
 * create(data, cb)
 * update(data, cb)
 * delete(id, cb)
 
-Example: Get all projects for the user:
+##### Examples:
+
+Get all projects for the user:
 ```javascript
 var tracker = require('pivotal-tracker');
 var client = new tracker.Client('mytoken');
@@ -28,7 +32,7 @@ client.projects.all(function(error, projects) {
 
 ```
 
-Example: Get a *specific* project:
+Get a *specific* project:
 ```javascript
 client.project(12345).get(function(error, project) {
 
@@ -37,7 +41,7 @@ client.project(12345).get(function(error, project) {
 
 ```
 
-Example: Get all stories in a project:
+Get all stories in a project:
 ```javascript
 client.project(12345).stories.all(function(error, stories) {
 
@@ -46,7 +50,7 @@ client.project(12345).stories.all(function(error, stories) {
 
 ```
 
-Example: Get a *specific* story in a *specific* project:
+Get a *specific* story in a *specific* project:
 ```javascript
 client.project(12345).story(67890).get(function(error, story) {
 
