@@ -105,13 +105,11 @@ client.project(123).get(function(error, project) {
 ```
 
 #### Service Chaining & the Resource Hierarchy
-Think of access to the various resources in terms of the inherent hierarchy of RESTful services.
-
-These hierarchical relationships are reflected in the pivotal-tracker module interface.
+Chaining works in a way that reflects the hierarchy of the REST API's resource objects.
 
 Example:
 
-Access to CRUD methods for comments is provided via the story sub-service...
+Access to CRUD methods for comments is provided via stories...
 ```javascript
 client.project(123).story(456).comments.all(function(error, comments) {
 
@@ -120,7 +118,7 @@ client.project(123).story(456).comments.all(function(error, comments) {
 
 ```
 
-...but you can't get to comments directly by way of a project, since the two resources have only an indirect relationship via stories...
+...but you can't get to comments directly by way of projects, since the two resources have only an indirect relationship via stories...
 ```javascript
 client.project(123).comments.all(function(error, comments) {
 
@@ -141,13 +139,9 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 
 
 #### Variable & Property Name Capitalization
-As is common with JSON interfaces, the property names recognized & returned by the v5 Pivotal Tracker REST service follow an underscore_naming_convention.
+The underscore_naming_convention is used when transmitting data to/from Pivotal, while the "public" interface for this module uses the camelCase convention. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
-It's also of course the case that JS code commonly follows the camelCaseNamingConvention for variables and properties.
-
-Instead of forcing one convention or the other, both are satisfied; underscore is used when transmitting to/from Pivotal, while the "public" interface for this module uses camelCase. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
-
-In other words...you should interact with using the camelCase convention:
+You should interact with using camelCase property names:
 ```javascript
 proj.name = 'hay guyz, new name';
 proj.enableFollowing = true;
@@ -181,9 +175,9 @@ The Basics:
 
 JSON is the data transfer format, so there's a layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
 
-In addition to this, for ease of use, type coersion is applied according to whatever JS type is equivalent to the data type specified for a for a given resource's property in the Pivotal API docs. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
+In addition to this, for ease of use, type coercion is applied according to whatever JS type is equivalent to the data type specified for a for a given resource's property in the Pivotal API docs. *NOTE that this is true both for data retrieved from the API as well as for property values you set on instantiated objects.*
 
-Here are the basics of how type coersion is applied:
+Here are the basics of how type coercion is applied:
 
 1. Regardless of Pivotal-specified data type, the following values, when passed into object property setters, are always defaulted to null:
     * null
@@ -327,11 +321,12 @@ https://www.pivotaltracker.com/help/api?version=v5
 + [Project Integrations](https://www.pivotaltracker.com/help/api/rest/v5#Project_Integrations "Pivotal Tracker API Documentation - Project Integrations")
 + [Exports](https://www.pivotaltracker.com/help/api/rest/v5#Exports "Pivotal Tracker API Documentation - Exports")
 + [Source Commits](https://www.pivotaltracker.com/help/api/rest/v5#Source_Commits "Pivotal Tracker API Documentation - Source Commits")
+* Configurable underscore vs. camel case naming convention
 
 
 ## License (MIT)
 
-Copyright (c) 2014 Sabra Pratt pratt.sabra@gmail.com
+Copyright (c) 2014 General UI support@generalui.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

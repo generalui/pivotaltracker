@@ -1,18 +1,18 @@
 { "name": "pivotal-tracker",
   "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
   "version": "0.1.0",
-  "homepage": "http://github.com/prattsj/pivotal-tracker",
+  "homepage": "http://github.com/generalui/pivotal-tracker",
   "keywords": [
     "pivotal", "tracker", "pivotaltracker"
   ],
-  "author": "Sabra Pratt <pratt.sabra@gmail.com>",
+  "author": "Sabra Pratt <sabra@generalui.com>",
   "main": "index.js",
   "bugs": {
-    "url": "http://github.com/prattsj/pivotal-tracker/issues"
+    "url": "http://github.com/generalui/pivotal-tracker/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/prattsj/pivotal-tracker.git"
+    "url": "http://github.com/generalui/pivotal-tracker.git"
   },
   "scripts": {
     "test": "nodeunit ./tests/unit/run.js"
@@ -28,6 +28,6 @@
   "engines": { "node" : ">= 0.8" },
   "licenses": [
     { "type": "MIT",
-      "url": "http://github.com/prattsj/pivotal-tracker/raw/master/LICENSE" }
+      "url": "http://github.com/generalui/pivotal-tracker/raw/master/LICENSE" }
   ]
 }
