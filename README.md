@@ -84,7 +84,7 @@ tracker.getToken(user, password, function(error, token) {
 
 ## Naming Conventions
 
-#### Singular vs. Plural "Service" Names (Methods vs. (Non-Function) Properties)
+#### Singular vs. Plural "Service" Names
 
 Want to get multiple instances of a resource (eg. "all stories")? Use the plural form of the resource name:
 ```javascript
@@ -170,7 +170,7 @@ PUT http://www.pivotaltracker.com/services/v4/projects/123
 
 
 
-## Type Conversion
+## Type Validation
 The Basics:
 
 JSON is the data transfer format, so there's a layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
@@ -315,13 +315,15 @@ https://www.pivotaltracker.com/help/api?version=v5
 * [Google Attachments](https://www.pivotaltracker.com/help/api/rest/v5#Attachments "Pivotal Tracker API Documentation - Google Attachments")
 * [Top-level Story service (not accessed through a particular project)](https://www.pivotaltracker.com/help/api/rest/v5#Attachments "Pivotal Tracker API Documentation - Stories")
 * [Top-level Epic service (not accessed through a particular project)](https://www.pivotaltracker.com/help/api/rest/v5#Epics "Pivotal Tracker API Documentation - Epics")
-+ [Followers](https://www.pivotaltracker.com/help/api/rest/v5#follower_resource "Pivotal Tracker API Documentation - Followers")
-+ [Saved Searches](https://www.pivotaltracker.com/help/api/rest/v5#Saved_Search "Pivotal Tracker API Documentation - Saved Searches")
-+ [Project Webhooks](https://www.pivotaltracker.com/help/api/rest/v5#Project_Webhooks "Pivotal Tracker API Documentation - Project Webhooks")
-+ [Project Integrations](https://www.pivotaltracker.com/help/api/rest/v5#Project_Integrations "Pivotal Tracker API Documentation - Project Integrations")
-+ [Exports](https://www.pivotaltracker.com/help/api/rest/v5#Exports "Pivotal Tracker API Documentation - Exports")
-+ [Source Commits](https://www.pivotaltracker.com/help/api/rest/v5#Source_Commits "Pivotal Tracker API Documentation - Source Commits")
-* Configurable underscore vs. camel case naming convention
+* [Followers](https://www.pivotaltracker.com/help/api/rest/v5#follower_resource "Pivotal Tracker API Documentation - Followers")
+* [Saved Searches](https://www.pivotaltracker.com/help/api/rest/v5#Saved_Search "Pivotal Tracker API Documentation - Saved Searches")
+* [Project Webhooks](https://www.pivotaltracker.com/help/api/rest/v5#Project_Webhooks "Pivotal Tracker API Documentation - Project Webhooks")
+* [Project Integrations](https://www.pivotaltracker.com/help/api/rest/v5#Project_Integrations "Pivotal Tracker API Documentation - Project Integrations")
+* [Exports](https://www.pivotaltracker.com/help/api/rest/v5#Exports "Pivotal Tracker API Documentation - Exports")
+* [Source Commits](https://www.pivotaltracker.com/help/api/rest/v5#Source_Commits "Pivotal Tracker API Documentation - Source Commits")
+* Configuration Options:
+    * underscore vs. camel case naming convention
+    * on/off type coercion
 
 
 ## License (MIT)
