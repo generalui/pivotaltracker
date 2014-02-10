@@ -9,6 +9,12 @@ pivotal-tracker is a node.js wrapper for the Pivotal Tracker API (v5).
 
 
 ## tl;dr
+Standard CRUD methods:
+* all()
+* get()
+* create()
+* update()
+* delete()
 
 Get all projects for the user:
 ```javascript
