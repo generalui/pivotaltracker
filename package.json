@@ -1,33 +1,51 @@
-{ "name": "pivotal-tracker",
-  "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
-  "version": "0.1.0",
-  "homepage": "http://github.com/generalui/pivotal-tracker",
-  "keywords": [
-    "pivotal", "tracker", "pivotaltracker"
-  ],
-  "author": "Sabra Pratt <sabra@generalui.com>",
-  "main": "index.js",
-  "bugs": {
-    "url": "http://github.com/generalui/pivotal-tracker/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/generalui/pivotal-tracker.git"
-  },
-  "scripts": {
-    "test": "nodeunit ./tests/unit/run.js"
-  },
-  "dependencies": {
-      "validator": "3.2.x",
-      "request": "2.33.x"
-  },
-  "devDependencies": {
-    "nodeunit": "latest",
-    "jshint": "latest"
-  },
-  "engines": { "node" : ">= 0.8" },
-  "licenses": [
-    { "type": "MIT",
-      "url": "http://github.com/generalui/pivotal-tracker/raw/master/LICENSE" }
-  ]
+{
+    "name": "pivotal-tracker",
+    "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
+    "version": "0.1.0",
+    "homepage": "http://github.com/generalui/pivotal-tracker",
+    "keywords": [
+        "pivotal", "tracker", "pivotaltracker"
+    ],
+    "contributors": [
+        {
+            name: "Sabra Pratt",
+            email: "sabra@generalui.com"
+        },
+        {
+            name: "Ricardo Colomé",
+            email: "ricardo@generalui.com"
+        },
+        {
+            name: "Rob Brennan",
+            email: "rob@generalui.com"
+        }
+    ],
+    "main": "index.js",
+    "bugs": {
+        "url": "http://github.com/generalui/pivotal-tracker/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/generalui/pivotal-tracker.git"
+    },
+    "scripts": {
+        "test": "nodeunit ./tests/unit/run.js"
+    },
+    "dependencies": {
+        "validator": "3.2.x",
+        "request": "2.33.x"
+    },
+    "devDependencies": {
+        "nodeunit": "latest",
+        "jshint": "latest"
+    },
+    "engines": {
+        "node" : ">= 0.8"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/generalui/pivotal-tracker/raw/master/LICENSE"
+        }
+    ]
 }
