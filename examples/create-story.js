@@ -1,8 +1,17 @@
+/**
+    To run from command line:
 
+    node create-story username password projectId
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Story
+ */
 var tracker  = require("../index.js"),
     username = process.argv[2],
     password = process.argv[3],
     projectId = process.argv[4];
+
+var REQUESTED_BY_ID = 123;
+var OWNER_ID = 456;
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -19,16 +28,15 @@ tracker.getToken(username, password, function(err, token) {
             storyType: 'feature',
             currentState: 'started',
             estimate: 2,
-            requestedById: 703101,
-            //ownedById: 703101,
+            requestedById: REQUESTED_BY_ID,
             comments: [{
-                personId: 703101,
+                personId: REQUESTED_BY_ID,
                 text: 'whoa, auto new story comment!'
             }],
             tasks: [{
                 description: 'wow, auto new story task!!'
             }],
-            ownerIds: [703101]
+            ownerIds: [OWNER_ID]
         };
 
         client.project(projectId).stories.create(data, function(error, story) {

@@ -2,12 +2,14 @@
     To run from command line:
 
     node get-epic username password projectId storyId
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Epics
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
-    projectId = process.argv[4] || 12345
-    epicId = process.argv[5] || 67890;
+    username = process.argv[2],
+    password = process.argv[3],
+    projectId = process.argv[4]
+    epicId = process.argv[5];
 
 tracker.getToken(username, password, function(err, token) {
 

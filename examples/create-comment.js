@@ -1,9 +1,17 @@
+/**
+ To run from command line:
 
+ node create-comment username password storyId
+
+ https://www.pivotaltracker.com/help/api/rest/v5#Comment
+ */
 var tracker  = require("../index.js"),
     username = process.argv[2],
     password = process.argv[3],
     projectId = process.argv[4],
     storyId = process.argv[5];
+
+var COMMENT_PERSON_ID = process.argv[6] || 123;
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -15,7 +23,7 @@ tracker.getToken(username, password, function(err, token) {
         var client = new tracker.Client({trackerToken:token});
 
         var comment = {
-            personId: 703101,
+            personId: COMMENT_PERSON_ID,
             text: 'testing, 1-2-3...'
         };
         

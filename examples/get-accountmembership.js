@@ -2,10 +2,12 @@
     To run from command line:
 
     node get-accountmmebership username password accountId personId
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Account_Memberships
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
+    username = process.argv[2],
+    password = process.argv[3],
     accountId = process.argv[4],
     personId = process.argv[5];
 

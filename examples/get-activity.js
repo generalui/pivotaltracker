@@ -2,10 +2,12 @@
     To run from command line:
 
     node get-activity username password projectId
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Activity
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
+    username = process.argv[2],
+    password = process.argv[3],
     projectId = process.argv[4];
 
 tracker.getToken(username, password, function(err, token) {
@@ -17,12 +19,12 @@ tracker.getToken(username, password, function(err, token) {
     else {
         var client = new tracker.Client({trackerToken:token});
         
-        client.project(projectId).activity.all(function(error, activity) {
+        client.project(projectId).activity.all(function(error, activities) {
             if (error) {
                 console.log(error);
             }
             else {
-                console.log(activity);
+                console.log(activities);
             }
         });
     }

@@ -1,8 +1,16 @@
+/**
+ To run from command line:
 
+ node create-epic username password epicId
+
+ https://www.pivotaltracker.com/help/api/rest/v5#Epic
+ */
 var tracker  = require("../index.js"),
     username = process.argv[2],
     password = process.argv[3],
     projectId = process.argv[4];
+
+var COMMENT_PERSON_ID = process.argv[5] || 123;
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -17,7 +25,7 @@ tracker.getToken(username, password, function(err, token) {
             name: 'hay guyz, this is an epic test',
             description: 'super cool epic description',
             comments: [{
-                personId: 703101,
+                personId: COMMENT_PERSON_ID,
                 text: 'whoa, auto new epic comment!'
             }]
         };

@@ -2,10 +2,12 @@
     To run from command line:
 
     node get-token username password
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Me
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
+    username = process.argv[2],
+    password = process.argv[3],
 
 tracker.getToken(username, password, function(err, token) {
 

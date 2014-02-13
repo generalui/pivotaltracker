@@ -1,13 +1,14 @@
 /**
     To run from command line:
 
-    node get-account username password projectId
+    node get-iteration username password projectId
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Iterations
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
-    projectId = process.argv[4],
-    attachmentId = process.argv[5];
+    username = process.argv[2],
+    password = process.argv[3],
+    projectId = process.argv[4];
 
 tracker.getToken(username, password, function(err, token) {
 
@@ -17,14 +18,13 @@ tracker.getToken(username, password, function(err, token) {
     }
     else {
         var client = new tracker.Client({trackerToken:token});
-        
-        client.project(projectId).fileAttachment(attachmentId).download(path, function(error, attachment) {
-        
+
+        client.project(projectId).iterations.all(function(error, iterations) {
             if (error) {
                 console.log(error);
             }
             else {
-                console.log(attachment);
+                console.log(iterations);
             }
         });
     }

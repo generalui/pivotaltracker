@@ -1,4 +1,10 @@
+/**
+ To run from command line:
 
+ node create-project username password
+
+ https://www.pivotaltracker.com/help/api/rest/v5#Project
+ */
 var tracker  = require("../index.js"),
     username = process.argv[2],
     password = process.argv[3];

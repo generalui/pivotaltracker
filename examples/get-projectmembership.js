@@ -1,7 +1,9 @@
 /**
- To run from command line:
+    To run from command line:
 
- node get-projectmembership username password project [personId]
+    node get-projectmembership username password project [personId]
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Project_Memberships
  */
 var tracker  = require("../index.js"),
     username = process.argv[2],

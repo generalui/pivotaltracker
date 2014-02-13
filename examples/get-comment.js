@@ -2,10 +2,12 @@
     To run from command line:
 
     node get-comment username password projectId
+
+    https://www.pivotaltracker.com/help/api/rest/v5#Comments
 */
 var tracker  = require("../index.js"),
-    username = process.argv[2] || 'fake_user',
-    password = process.argv[3] || 'fake_password',
+    username = process.argv[2],
+    password = process.argv[3],
     projectId = process.argv[4],
     storyId = process.argv[5],
     commentId = process.argv[6];
