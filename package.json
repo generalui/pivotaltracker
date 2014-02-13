@@ -8,16 +8,16 @@
     ],
     "contributors": [
         {
-            name: "Sabra Pratt",
-            email: "sabra@generalui.com"
+            "name": "Sabra Pratt",
+            "email": "sabra@generalui.com"
         },
         {
-            name: "Ricardo Colomé",
-            email: "ricardo@generalui.com"
+            "name": "Ricardo Colomé",
+            "email": "ricardo@generalui.com"
         },
         {
-            name: "Rob Brennan",
-            email: "rob@generalui.com"
+            "name": "Rob Brennan",
+            "email": "rob@generalui.com"
         }
     ],
     "main": "index.js",
