@@ -1,6 +1,8 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    activity = require('../lib/resources/activity');
+    Project = require('../../lib/resources/project').Project,
+    Person = require('../../lib/resources/person').Person,
+    activity = require('../../lib/resources/activity');
 
 /* Test constructor fns */
 var constructors = {
@@ -11,13 +13,17 @@ var constructors = {
                 kind: 'activity',
                 guid: '5-4-3-2-1',
                 projectId: 343443,
-                project: {hey:'ho'},
+                project: new Project({
+                    name: 'what up tho'
+                }),
                 projectVersion: 34,
                 message: 'hay guyz!',
                 highlight: 'hay guyz!',
                 occurredAt: new Date(),
                 performedById: 3434,
-                performedBy: {hey:'ho'},
+                performedBy: new Person({
+                    name: 'hip hop hooray'
+                }),
                 primaryResources: [{bud:'bud'},{weis:'weis'},{er:'er'}],
                 changes: [{gone:'come'}]
             }

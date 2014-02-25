@@ -1,7 +1,13 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    project = require('../lib/resources/project')
-    ptutil = require('../lib/resources/utils');
+    Person = require('../../lib/resources/person').Person,
+    Story = require('../../lib/resources/story').Story,
+    Epic = require('../../lib/resources/epic').Epic,
+    Integration = require('../../lib/resources/integration').Integration,
+    IterationOverride = require('../../lib/resources/iterationoverride').IterationOverride,
+    Membership = require('../../lib/resources/projectmembership').ProjectMembership,
+    project = require('../../lib/resources/project'),
+    ptutil = require('../../lib/resources/utils');
 
 /* Test constructor fns */
 var constructors = {
@@ -39,15 +45,53 @@ var constructors = {
                 hasGoogleDomain: false,
                 timeZone: {so:'messy'},
                 integrationIds: [33,44,55],
-                integrations: [{whats:'is'},{your:'major'},{malfunction:'?'}],
+                integrations: [
+                    new Integration({
+                        name:'what is'
+                    }),
+                    new Integration({
+                        name:'your major'
+                    }),
+                    new Integration({
+                        name:'malfunction?'
+                    })
+                ],
                 iterationOverrideNumbers: [88,99],
-                iterationOverrides: [{im:'just'},{a:'bill'}],
+                iterationOverrides: [
+                    new IterationOverride({
+                        kind: 'im just'
+                    }),
+                    new IterationOverride({
+                        kind: 'a bill'
+                    })
+                ],
                 membershipIds: [12121,324232],
-                memberships: [{golden:'time'},{of:'day'}],
+                memberships: [
+                    new Membership({
+                        projetColor: 'light green'
+                    }),
+                    new Membership({
+                        projectColor: 'dark green'
+                    })
+                ],
                 epicIds: [23223, 323],
-                epics: [{dothe:'hokeypokey'},{turnyourself:'around'}],
+                epics: [
+                    new Epic({
+                        name: 'here we go'
+                    }),
+                    new Epic({
+                        description: 'oh man oh man'
+                    })
+                ],
                 storyIds: [775, 3434],
-                stories: [{eye:'of'},{the:'tiger'}]
+                stories: [
+                    new Story({
+                        name: 'yeehaw'
+                    }),
+                    new Story({
+                        description: 'zippity do'
+                    })
+                ]
             }
         ]
     },

@@ -1,6 +1,8 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    comment = require('../lib/resources/comment');
+    Person = require('../../lib/resources/person').Person,
+    FileAttachment = require('../../lib/resources/fileattachment').FileAttachment,
+    comment = require('../../lib/resources/comment');
 
 /* Test constructor fns */
 var constructors = {
@@ -12,16 +14,27 @@ var constructors = {
                 id: 54322,
                 epicId: 343443,
                 storyId: 234234,
-                projectId: 32322,
                 createdAt: new Date(),
                 updatedAt: new Date(),
                 text: 'blurb',
                 personId: 234234,
-                person: {of:'interest'},
+                person: new Person({
+                    name:'of interest'
+                }),
                 commitIdentifier: 'ewewe',
                 commitType: 'githubz',
                 fileAttachmentIds: [3,2,1],
-                fileAttachmentIds: [{fee:'fee'},{fi:'fi'},{fo:'fo'}]
+                fileAttachments: [
+                    new FileAttachment({
+                        bigUrl: 'zomg'
+                    }),
+                    new FileAttachment({
+                        bigUrl: 'guyz'
+                    }),
+                    new FileAttachment({
+                        bigUrl: 'look'
+                    })
+                ]
             }
         ]
     },
@@ -53,10 +66,6 @@ var testData = [
 	{
 		propertyName: 'storyId',
 		happyTestValue: 568688768
-	},
-	{
-		propertyName: 'projectId',
-		happyTestValue: 54321
 	},
 	{
 		propertyName: 'personId',

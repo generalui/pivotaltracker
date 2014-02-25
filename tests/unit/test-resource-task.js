@@ -1,6 +1,6 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    task = require('../lib/resources/task');
+    task = require('../../lib/resources/task');
 
 /* Test constructor fns */
 var constructors = {

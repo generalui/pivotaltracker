@@ -1,6 +1,7 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    membership = require('../lib/resources/accountmembership');
+    Person = require('../../lib/resources/person').Person,
+    membership = require('../../lib/resources/accountmembership');
 
 /* Test constructor fns */
 var constructors = {
@@ -12,7 +13,9 @@ var constructors = {
                 id: 123,
                 accountId: 456,
                 personId: 789,
-                person: {hey:'ho'},
+                person: new Person({
+                    name: 'richard sherman'
+                }),
                 createdAt: new Date(),
                 updatedAt: new Date(),
                 owner: true,

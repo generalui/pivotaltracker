@@ -1,6 +1,8 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    epic = require('../lib/resources/epic');
+    Comment = require('../../lib/resources/comment').Comment,
+    Label = require('../../lib/resources/label').Label,
+    epic = require('../../lib/resources/epic');
 
 /* Test constructor fns */
 var constructors = {
@@ -13,14 +15,26 @@ var constructors = {
                 projectId: 32322,
                 beforeId: 98978,
                 afterId: 54646,
-                name: 'the dog',
-                url: 'http://thestars.com',
+                name: 'nodecopter',
+                url: 'http://nodebot.com',
                 createdAt: new Date(),
                 updatedAt: new Date(),
                 labelId: 78768,
-                label: {the:'folder'},
+                label: new Label({
+                    name: 'junk'
+                }),
                 commentIds: [7,6,4],
-                comments: [{what:'what'},{the:'the'},{frick:'frick'}]
+                comments: [
+                    new Comment({
+                        text:'what'
+                    }),
+                    new Comment({
+                        text:'the'
+                    }),
+                    new Comment({
+                        text:'hay'
+                    })
+                ]
             }
         ]
     },

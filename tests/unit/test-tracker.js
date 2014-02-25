@@ -1,7 +1,7 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    tracker = require('../lib/tracker'),
-    project = require('../lib/resources/project');
+    tracker = require('../../lib/tracker'),
+    project = require('../../lib/resources/project');
 
 var constructors = {
     "tracker.Client": {

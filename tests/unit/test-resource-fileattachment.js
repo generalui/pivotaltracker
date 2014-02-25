@@ -1,6 +1,6 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    attach = require('../lib/resources/fileattachment');
+    attach = require('../../lib/resources/fileattachment');
 
 /* Test constructor fns */
 var constructors = {

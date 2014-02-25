@@ -1,6 +1,11 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    story = require('../lib/resources/story');
+    Person = require('../../lib/resources/person').Person,
+    Integration = require('../../lib/resources/integration').Integration,
+    Label = require('../../lib/resources/label').Label,
+    Comment = require('../../lib/resources/comment').Comment,
+    Task = require('../../lib/resources/task').Task,
+    story = require('../../lib/resources/story');
 
 /* Test constructor fns */
 var constructors = {
@@ -25,19 +30,58 @@ var constructors = {
                 deadline: new Date(1),
                 plannedIterationNumber: 2014,
                 integrationId: 1,
-                integration: {wake:'up',flawless:'flawless'},
+                integration: new Integration({
+                    apiUsername:'you wake up',
+                    apiPassword:'flawless'
+                }),
                 requestedById: 2,
-                requestedBy: {post:'up',flawless:'flawless'},
+                requestedBy: new Person({
+                    name:'queen bey',
+                    email:'queen@beyonce.com'
+                }),
                 ownedById: 3,
-                ownedBy: {ridinround:'indat',flawless:'flawless'},
+                ownedBy: new Person({
+                    name:'queen bey clone',
+                    email:'clone@beyonce.com'
+                }),
                 labelIds: [0],
-                labels: [{}],
-                commentIds: [3,4,5,6,7],
-                comments: [{},{},{},{},{}],
-                ownerIds: [3,4,5,6],
-                owners: [{hip:'hop'},{hooray:'ho'},{hey:'ho'},{hey:'ho'}],
-                taskIds: [5,4,3,2,1],
-                tasks: [{a:1},{b:2},{c:3},{d:4},{f:5}]
+                labels: [
+                    new Label({
+                        name: 'ridin_round_in_dat'
+                    })
+                ],
+                commentIds: [3,4,5,6,7 ],
+                comments: [
+                    new Comment({
+                        text: 'hay guyz'
+                    }),
+                    new Comment({
+                        text: 'itz commentz'
+                    })
+                ],
+                ownerIds: [ 3,4,5,6 ],
+                owners: [
+                    new Person({
+                        name:'queen bey clone 2',
+                        email:'clone2@beyonce.com'
+                    }),
+                    new Person({
+                        name:'queen bey clone 3',
+                        email:'clone3@beyonce.com'
+                    })
+                ],
+                taskIds: [ 5,4,3,2,1 ],
+                tasks: [
+                    new Task({
+                        description: '0_b'
+                    }),
+                    new Task({
+                        description: '1_e'
+                    }),
+                    new Task({
+                        description: '2_y'
+                    })
+                ]
             }
         ]
     },

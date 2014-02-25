@@ -1,6 +1,7 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    membership = require('../lib/resources/projectmembership');
+    Person = require('../../lib/resources/person').Person,
+    membership = require('../../lib/resources/projectmembership');
 
 /* Test constructor fns */
 var constructors = {
@@ -12,7 +13,10 @@ var constructors = {
                 id: 54322,
                 projectId: 32452542424,
                 personId: 2343234,
-                person: {to:'speak to'},
+                person: new Person({
+                    name:'aw snap',
+                    email: 'me@snap.com'
+                }),
                 role: 'superhero',
                 projectColor: 'fucsia',
                 createdAt: new Date(0),

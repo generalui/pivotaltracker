@@ -1,6 +1,6 @@
 var nodeunit = require('nodeunit'),
     utils = require('./utils'),
-    iteration = require('../lib/resources/iteration');
+    iteration = require('../../lib/resources/iteration');
         
 /* Test constructor fns */
 var constructors = {
