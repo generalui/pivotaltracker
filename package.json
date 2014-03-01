@@ -1,8 +1,8 @@
 {
-  "name": "pivotal-tracker",
+  "name": "node-pivotal",
   "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
   "version": "0.1.0",
-  "homepage": "http://github.com/generalui/pivotal-tracker",
+  "homepage": "http://github.com/generalui/node-pivotal",
   "keywords": [
     "pivotal",
     "tracker",
@@ -25,11 +25,11 @@
   ],
   "main": "index.js",
   "bugs": {
-    "url": "http://github.com/generalui/pivotal-tracker/issues"
+    "url": "http://github.com/generalui/node-pivotal/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/generalui/pivotal-tracker.git"
+    "url": "http://github.com/generalui/node-pivotal.git"
   },
   "scripts": {
     "test": "nodeunit ./tests/unit/run.js"
@@ -48,7 +48,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/generalui/pivotal-tracker/raw/master/LICENSE"
+      "url": "http://github.com/generalui/node-pivotal/raw/master/LICENSE"
     }
   ]
 }
