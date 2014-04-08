@@ -60,16 +60,6 @@ var constructors = {
                     })
                 ],
                 ownerIds: [ 3,4,5,6 ],
-                owners: [
-                    new Person({
-                        name:'queen bey clone 2',
-                        email:'clone2@beyonce.com'
-                    }),
-                    new Person({
-                        name:'queen bey clone 3',
-                        email:'clone3@beyonce.com'
-                    })
-                ],
                 taskIds: [ 5,4,3,2,1 ],
                 tasks: [
                     new Task({
