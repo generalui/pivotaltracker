@@ -3,12 +3,12 @@
 A node.js wrapper for the Pivotal Tracker API (v5).
 
 
-## Installation
+### Installation
 
     npm install node-pivotal
 
 
-## tl;dr
+### tl;dr
 
 ##### Standard resource CRUD methods:
 
@@ -60,7 +60,7 @@ client.project(12345).story(67890).get(function(error, story) {
 ```
 
 
-## Authentication
+### Authentication
 https://www.pivotaltracker.com/help/api#Request_Authentication_and_CORS
 
 Authenticating is easy. Pass in a string with the user's API token when creating a client:
@@ -92,7 +92,7 @@ tracker.getToken(user, password, function(error, token) {
 ```
 
 
-## Naming Conventions
+### Naming Conventions
 
 #### Singular vs. Plural "Service" Names
 
@@ -151,7 +151,7 @@ GET http://www.pivotaltracker.com/services/v5/projects/123/stories/456/comments
 #### Variable & Property Name Capitalization
 The underscore_naming_convention is used when transmitting data to/from Pivotal, while the "public" interface for this module uses the camelCase convention. It will automatically translate names when sending/retrieving data from the service, converting camelCaseNames to & from underscore_names as needed.
 
-You should interact with using camelCase property names:
+You should interface using camelCase convention:
 ```javascript
 proj.name = 'hay guyz, new name';
 proj.enableFollowing = true;
@@ -180,7 +180,7 @@ PUT http://www.pivotaltracker.com/services/v4/projects/123
 
 
 
-## Type Validation
+### Type Validation
 The Basics:
 
 JSON is the data transfer format, so there's a layer of JSON.parse() and JSON.stringify() on incoming & outgoing POST/PUT body data, respectively.
@@ -210,7 +210,7 @@ Here are the basics of how type coercion is applied:
         * If a non-null, non-array value has type 'object', it's set as-is. All other values are defaulted to null.
 
 
-## API
+### API
 
 #### tracker main
 * tracker.getToken
@@ -309,17 +309,17 @@ Here are the basics of how type coercion is applied:
 * attachment.download
 
 
-## Running Tests
+### Running Tests
 ```
 $ npm test
 ```
 
-## Complete Pivotal Tracker API (v5) Documentation
+### Complete Pivotal Tracker API (v5) Documentation
 
 https://www.pivotaltracker.com/help/api?version=v5
 
 
-## Roadmap
+### Roadmap
 #### Support planned in future versions for:
 * [Iteration Overrides](https://www.pivotaltracker.com/help/api/rest/v5#Iterations "Pivotal Tracker API Documentation - Iteration Overrides")
 * [Google Attachments](https://www.pivotaltracker.com/help/api/rest/v5#Attachments "Pivotal Tracker API Documentation - Google Attachments")
@@ -333,12 +333,12 @@ https://www.pivotaltracker.com/help/api?version=v5
 * [Source Commits](https://www.pivotaltracker.com/help/api/rest/v5#Source_Commits "Pivotal Tracker API Documentation - Source Commits")
 * Configuration Options:
     * underscore vs. camel case naming convention
-    * on/off type coercion
+    * on/off type coercionyou 
 
 
-## License (MIT)
+### License (MIT)
 
-Copyright (c) 2014 General UI support@generalui.com
+Copyright (c) 2014 General UI LLC &lt;support@generalui.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
