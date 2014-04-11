@@ -1,11 +1,11 @@
-# node-pivotal
+# pivotaltracker
 
 A node.js wrapper for the Pivotal Tracker API (v5).
 
 
 ### Installation
 
-    npm install node-pivotal
+    npm install pivotaltracker
 
 
 ### tl;dr
@@ -22,7 +22,7 @@ A node.js wrapper for the Pivotal Tracker API (v5).
 
 Get all projects for the user:
 ```javascript
-var tracker = require('node-pivotal');
+var tracker = require('pivotaltracker');
 var client = new tracker.Client('mytoken');
 
 client.projects.all(function(error, projects) {
@@ -65,13 +65,13 @@ https://www.pivotaltracker.com/help/api#Request_Authentication_and_CORS
 
 Authenticating is easy. Pass in a string with the user's API token when creating a client:
 ```javascript
-var tracker = require('node-pivotal');
+var tracker = require('pivotaltracker');
 var client = new tracker.Client('apiToken');
 ```
 
 Change the token at any time. Note that this will affect & auto-update the token for any "sub-services" (for projects, stories, etc.) accessed via this client instance:
 ```javascript
-var tracker = require('node-pivotal');
+var tracker = require('pivotaltracker');
 var client = tracker.Client();
 
 /* stuff happens... */
@@ -81,7 +81,7 @@ client.useToken('apiToken');
 
 You can also retrieve the token with a username and password:
 ```javascript
-var tracker = require('node-pivotal');
+var tracker = require('pivotaltracker');
 var user = 'mario';
 var password = 'fireball';
 

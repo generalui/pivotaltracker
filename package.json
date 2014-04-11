@@ -1,35 +1,38 @@
 {
-  "name": "node-pivotal",
+  "name": "pivotaltracker",
   "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
   "version": "0.1.0",
-  "homepage": "http://github.com/generalui/node-pivotal",
+  "homepage": "http://github.com/generalui/pivotaltracker",
   "keywords": [
     "pivotal",
     "tracker",
-    "pivotaltracker",
-    "pivotal tracker"
+    "pivotal tracker",
+    "pivotaltracker"
   ],
   "contributors": [
     {
       "name": "Rob Brennan",
-      "email": "rob@generalui.com"
+      "email": "rob@generalui.com",
+      "email": "http://generalui.com"
     },
     {
       "name": "Ricardo Colomé",
-      "email": "ricardo@generalui.com"
+      "email": "ricardo@generalui.com",
+      "email": "http://generalui.com"
     },
     {
       "name": "Sabra Pratt",
-      "email": "sabra@generalui.com"
+      "email": "sabra@generalui.com",
+      "email": "http://generalui.com"
     }
   ],
   "main": "index.js",
   "bugs": {
-    "url": "http://github.com/generalui/node-pivotal/issues"
+    "url": "http://github.com/generalui/pivotaltracker/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/generalui/node-pivotal.git"
+    "url": "http://github.com/generalui/pivotaltracker.git"
   },
   "scripts": {
     "test": "nodeunit ./tests/unit/run.js"
@@ -48,7 +51,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/generalui/node-pivotal/raw/master/LICENSE"
+      "url": "http://github.com/generalui/pivotaltracker/raw/master/LICENSE"
     }
   ]
 }
