@@ -36,7 +36,7 @@ Get a *specific* project:
 ```javascript
 client.project(12345).get(function(error, project) {
 
-    /* Bells & whistles (data returned as a single project object) */ 
+    /* Bells & whistles (data returned as a single project object) */
 });
 
 ```
@@ -101,7 +101,7 @@ Want to get multiple instances of a resource (eg. "all stories")? Use the plural
 // GET http://www.pivotaltracker.com/services/v5/projects
 
 client.projects.all(function(error, projects) {
-    /* ... */ 
+    /* ... */
 });
 ```
 
@@ -211,102 +211,7 @@ Here are the basics of how type coercion is applied:
 
 
 ### API
-
-#### tracker main
-* tracker.getToken
-* tracker.Client
-* tracker.fileAttachment
-
-#### tracker Client
-* client.getToken
-* client.useToken
-* client.account
-* client.accounts
-* client.project
-* client.projects
-
-#### account Service
-* account.membership
-* account.memberships
-
-#### account membership Service
-* acctmember.all
-* acctmember.get
-* acctmember.create
-* acctmember.update
-* acctmember.delete
-
-#### project Service
-* project.all
-* project.get
-* project.create
-* project.update
-* project.delete
-* project.membership
-* project.memberships
-* project.label
-* project.labels
-* project.epic
-* project.epics
-* project.story
-* project.stories
-* project.uploads
-
-#### project membership Service
-* projmember.all
-* projmember.get
-* projmember.create
-* projmember.update
-* projmember.delete
-
-#### epic Service
-* epic.all
-* epic.get
-* epic.create
-* epic.update
-* epic.delete
-* epic.comment
-* epic.comments
-
-#### story Service
-* story.all
-* story.get
-* story.create
-* story.update
-* story.delete
-* story.task
-* story.tasks
-* story.label
-* story.labels
-* story.comment
-* story.comments
-
-#### task Service
-* task.all
-* task.get
-* task.create
-* task.update
-* task.delete
-
-#### label Service
-* label.all
-* label.get
-* label.create
-* label.update
-* label.delete
-
-#### comment Service
-* comment.all
-* comment.get
-* comment.create
-* comment.update
-* comment.delete
-* comment.fileAttachment
-
-#### file attachment Service
-* attachment.delete
-* attachment.upload
-* attachment.download
+[Module API Documentation](./docs/README.md)
 
 
 ### Running Tests
@@ -333,7 +238,7 @@ https://www.pivotaltracker.com/help/api?version=v5
 * [Source Commits](https://www.pivotaltracker.com/help/api/rest/v5#Source_Commits "Pivotal Tracker API Documentation - Source Commits")
 * Configuration Options:
     * underscore vs. camel case naming convention
-    * on/off type coercionyou 
+    * on/off type coercionyou
 
 
 ### License (MIT)
