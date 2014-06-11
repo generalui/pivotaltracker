@@ -1,7 +1,7 @@
 {
   "name": "pivotaltracker",
   "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/generalui/pivotaltracker",
   "keywords": [
     "pivotal",
@@ -13,17 +13,17 @@
     {
       "name": "Rob Brennan",
       "email": "rob@generalui.com",
-      "email": "http://generalui.com"
+      "url": "http://generalui.com"
     },
     {
       "name": "Ricardo Colomé",
       "email": "ricardo@generalui.com",
-      "email": "http://generalui.com"
+      "url": "http://generalui.com"
     },
     {
       "name": "Sabra Pratt",
       "email": "sabra@generalui.com",
-      "email": "http://generalui.com"
+      "url": "http://generalui.com"
     }
   ],
   "main": "index.js",
