@@ -18,12 +18,12 @@ tracker.getToken(username, password, function(err, token) {
     else {
         var client = new tracker.Client({trackerToken:token});
 
-        client.projects.all(function(error, projects) {
+        client.project(projectId).get(function(error, project) {
             if (error) {
                 console.log(error);
             }
             else {
-                console.log(projects);
+                console.log(project);
             }
         });
     }
