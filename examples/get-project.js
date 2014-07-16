@@ -17,13 +17,13 @@ tracker.getToken(username, password, function(err, token) {
     }
     else {
         var client = new tracker.Client({trackerToken:token});
-        
-        client.project(projectId).get(function(error, project) {
+
+        client.projects.all(function(error, projects) {
             if (error) {
                 console.log(error);
             }
             else {
-                console.log(project);
+                console.log(projects);
             }
         });
     }
