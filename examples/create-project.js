@@ -21,7 +21,6 @@ tracker.getToken(username, password, function(err, token) {
         var data = {
             name: 'testy-test 17',
             atomEnabled: true,
-            enablePlannedMode: true,
             weekStartDay: 'Wednesday',
             profileContent: 'wowzas--profile content',
             description: 'oh yeahs...the description',
