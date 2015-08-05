@@ -11,5 +11,6 @@ module.exports = {
     "test-resource-projectmembership": require('./test-resource-projectmembership.js'),
     "test-resource-story": require('./test-resource-story.js'),
     "test-resource-task": require('./test-resource-task.js'),
+    "test-resource-utils": require('./test-utils.js'),
     "test-tracker": require('./test-tracker.js')
 };
