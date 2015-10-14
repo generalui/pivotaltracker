@@ -1,7 +1,7 @@
 {
   "name": "pivotaltracker",
   "description": "Node.js wrapper for Pivotal Tracker REST API (v5)",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "http://github.com/generalui/pivotaltracker",
   "keywords": [
     "pivotal",
