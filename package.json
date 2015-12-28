@@ -48,10 +48,5 @@
   "engines": {
     "node": ">= 0.8"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/generalui/pivotaltracker/raw/master/LICENSE"
-    }
-  ]
+  "license": "MIT"
 }
