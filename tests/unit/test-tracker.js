@@ -25,7 +25,7 @@ exports.test_useToken = function(test) {
 };
 
 exports.test_configChain = function(test) {
-    test.expect(22);
+    test.expect(26);
     
     var origToken = 'mahtokenz';
     var client = new tracker.Client({trackerToken: origToken});
@@ -74,5 +74,10 @@ exports.test_configChain = function(test) {
 	test.equal(newNewToken, labels.config.trackerToken, 'stories -> labels token chaining should auto-update token to '+newNewToken);
 	test.equal(newNewToken, comments.config.trackerToken, 'stories -> comments token chaining should auto-update token to '+newNewToken);
 	
+	test.equal(123, client.project(123).story(456).projectId, 'stories -> project identifier should match');
+	test.equal(null, client.project(undefined).story(456).projectId, 'stories -> project identifier should match');
+	test.equal('projects/123/stories/456', client.project(123).story(456).pathSegments().join('/'), 'stories -> path segments should match');
+	test.equal('stories/456', client.project(undefined).story(456).pathSegments().join('/'), 'stories -> path segments should match');
+
 	test.done();
 };
