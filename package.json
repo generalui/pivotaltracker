@@ -38,8 +38,9 @@
     "test": "nodeunit ./tests/unit/run.js"
   },
   "dependencies": {
-    "request": "2.33.x",
-    "form-data": "~0.1.2"
+    "form-data": "~0.1.2",
+    "lodash.merge": "^4.6.0",
+    "request": "2.33.x"
   },
   "devDependencies": {
     "nodeunit": "latest",
